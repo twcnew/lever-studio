@@ -28,7 +28,10 @@
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Font audit: 3 families max (sans for titles/body/labels, serif for title
+     accents, Caveat for handwritten ink). Labels formerly set in Geist Mono
+     now resolve to the sans stack — size/color/tracking do the differentiation. */
+  --font-mono: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {

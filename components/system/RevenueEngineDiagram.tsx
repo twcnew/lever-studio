@@ -61,7 +61,6 @@ export function RevenueEngineDiagram() {
                   <span className="rev-engine__cl">{engineTitle}</span>
                   <span className="rev-engine__cnode w" />
                 </div>
-                <div className="rev-engine__eglow" aria-hidden="true" />
                 <ClaudeGymMark className="rev-engine__emark" />
                 <div className="rev-engine__erouting">{routingLabel}</div>
               </div>

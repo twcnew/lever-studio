@@ -20,8 +20,7 @@ import { SiteFooter } from "./lp/SiteFooter";
 import { ABOUT_CONTENT } from "@/lib/aboutContent";
 
 const SUB_LINES = [
-  "I build the GTM processes that help you distribute and scale your B2B product.",
-  "Lever helps you save time, grow revenue, and run smarter processes.",
+  "One GTM engineer who turns your market's signals into booked meetings, inside your own stack.",
 ];
 
 export function LumioHome() {
@@ -68,10 +67,10 @@ export function LumioHome() {
             ))}
           </p>
           <div className="hero__ctas" data-ctas>
-            <button className="btn btn-solid" type="button">
+            <a className="btn btn-solid" href="#contact">
               <span>Book a Strategy Call</span>
               <VideoCall />
-            </button>
+            </a>
           </div>
 
           <HeroLogoStrip />

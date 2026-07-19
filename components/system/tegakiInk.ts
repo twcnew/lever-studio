@@ -1,5 +1,5 @@
 export const TEGAKI_INK_COLOR = "color-mix(in srgb, var(--royal) 88%, var(--ink))";
-export const TEGAKI_WRITE_DURATION_S = 2.4;
+export const TEGAKI_WRITE_DURATION_S = 1.4;
 export const TEGAKI_TIMING = { glyphGap: 0.02, wordGap: 0.04 } as const;
 export const TEGAKI_QUALITY = { smoothing: true, segmentSize: 1.5 } as const;
 

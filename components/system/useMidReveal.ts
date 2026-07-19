@@ -3,7 +3,7 @@
 import { useEffect, useRef, type RefObject } from "react";
 import { prefersReducedMotion } from "@/lib/prefersReducedMotion";
 
-export const INK_PATH_DRAW_MS = 720;
+export const INK_PATH_DRAW_MS = 520;
 export const INK_CTA_READING_GAP_MS = 180;
 
 const REVEAL_IO = {

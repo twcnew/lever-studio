@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Caveat, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Caveat, Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -39,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable} antialiased`}
+      className={`${geistSans.variable} ${instrumentSerif.variable} ${caveat.variable} antialiased`}
     >
       <body>{children}</body>
     </html>
