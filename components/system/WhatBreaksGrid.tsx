@@ -44,6 +44,7 @@ export function WhatBreaksGrid({
                           <InkAnnotate
                             variant="underline"
                             note="No system = less revenue."
+                            multiline
                           >
                             {TITLE_ACCENT_ANNOTATED}
                           </InkAnnotate>

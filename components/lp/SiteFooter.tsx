@@ -85,18 +85,29 @@ export function SiteFooter() {
                 <p className="site-footer__brand-tagline">{FOOTER_CONTENT.brand.tagline}</p>
               </div>
             <div className="site-footer__legal">
+              <nav className="site-footer__social" aria-label="Social links">
+                {FOOTER_CONTENT.social.map((link, index) => (
+                  <span className="site-footer__social-item" key={link.label}>
+                    {index > 0 ? (
+                      <span className="site-footer__social-sep" aria-hidden="true">
+                        ·
+                      </span>
+                    ) : null}
+                    <a
+                      className="site-footer__social-link"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label}
+                      <span aria-hidden="true"> ↗</span>
+                    </a>
+                  </span>
+                ))}
+              </nav>
               <p className="site-footer__copyright">&copy; {FOOTER_CONTENT.year}</p>
               <p className="site-footer__credit-line">{FOOTER_CONTENT.credits.line1}</p>
-              <p className="site-footer__credit-line">
-                <a
-                  className="site-footer__credit-link"
-                  href={founder.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {FOOTER_CONTENT.credits.line2}
-                </a>
-              </p>
+              <p className="site-footer__credit-line">{FOOTER_CONTENT.credits.line2}</p>
             </div>
           </div>
         </div>

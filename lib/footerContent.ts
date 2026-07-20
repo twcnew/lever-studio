@@ -15,6 +15,10 @@ export const FOOTER_CONTENT = {
     line1: "Built by operators",
     line2: "Mapped for modern go-to-market",
   },
+  social: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/alexis-rodrigues1/" },
+    { label: "X", href: "https://x.com/twicewest94" },
+  ],
   get year() {
     return new Date().getFullYear();
   },
