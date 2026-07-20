@@ -4,7 +4,9 @@ export const TEGAKI_TIMING = { glyphGap: 0.02, wordGap: 0.04 } as const;
 export const TEGAKI_QUALITY = { smoothing: true, segmentSize: 1.5 } as const;
 
 export const TEGAKI_CTA_STYLE = {
-  fontSize: "clamp(17px, 1.55vw, 20px)",
+  /* the min(4.6vw) term only bites below ~370px so the longest single-line
+     CTA keeps fitting on small phones; desktop sizing is unchanged */
+  fontSize: "min(clamp(17px, 1.55vw, 20px), 4.6vw)",
   color: TEGAKI_INK_COLOR,
   fontWeight: 600,
   lineHeight: 1.25,

@@ -2936,6 +2936,8 @@ html.fp-on body {
     font-size: clamp(20px, 6.9vw, 42px);
     letter-spacing: -0.045em;
     line-height: 1.12;
+    /* avoid the lone "systems" widow when the first row wraps */
+    text-wrap: balance;
   }
   .hero__title .row2 {
     letter-spacing: -0.045em;
@@ -6477,6 +6479,15 @@ html.fp-on body {
   clip-path: inset(0 0 56px 0);
 }
 
+/* On mobile, Cal's slots view scrolls inside a fixed-height iframe: the crop
+   would hide the last slots, so show the full embed (branding included). */
+@media (max-width: 900px) {
+  .lp-closing-cal iframe.cal-embed {
+    margin-bottom: 0;
+    clip-path: none;
+  }
+}
+
 .lp--clay .lp-module--closing .lp-closing-cal {
   margin-top: 0;
   background: #fff;
@@ -9186,7 +9197,8 @@ html.fp-on body {
 @media (max-width: 860px) {
   .lp--clay {
     --lp-section-min-height: auto;
-    --lp-section-pad-y: clamp(72px, 11vh, 112px);
+    /* tighter vertical rhythm on phones: ~120px between sections instead of ~200px */
+    --lp-section-pad-y: clamp(52px, 7vh, 64px);
   }
 
   .lp-module--problem .lp-module__grid--split {
@@ -9711,6 +9723,12 @@ html.fp-on body {
   padding: 0.12em 0.2em;
 }
 
+/* Inside running body copy the circle padding reads as doubled word spacing;
+   keep the ellipse breathing room vertical-only there. */
+.lp-module__sub .ink-annotate--circle {
+  padding-inline: 0.04em;
+}
+
 .ink-annotate--circle.ink-annotate--reveal-hover {
   display: inline-block;
   vertical-align: baseline;
@@ -9907,7 +9925,9 @@ html.fp-on body {
   pointer-events: none;
   white-space: nowrap;
   font-family: Caveat, cursive;
-  font-size: clamp(17px, 1.55vw, 20px);
+  /* keep in sync with TEGAKI_CTA_STYLE (tegakiInk.ts): the 4.6vw term only
+     bites below ~370px so long CTAs fit on small phones */
+  font-size: min(clamp(17px, 1.55vw, 20px), 4.6vw);
   font-weight: 600;
   line-height: 1.25;
 }
@@ -10411,6 +10431,12 @@ html.fp-on body {
     padding: 20px 18px;
   }
 
+  /* room for the peek mascot of cell 3, which pokes above its own top edge
+     and would otherwise overlap cell 2's copy in the stacked layout */
+  .what-breaks__cell--d2 {
+    padding-bottom: 48px;
+  }
+
   .wb-scene {
     min-height: 132px;
   }
@@ -10745,6 +10771,9 @@ html.fp-on body {
   .solution-panel__owner {
     border-right: none;
     border-bottom: 1px solid var(--hairline);
+    /* room for the confetti mascot (and its confetti burst) jumping over the
+       pipeline panel border */
+    padding-bottom: 64px;
   }
 
   .solution-panel__pipeline {
@@ -11227,6 +11256,11 @@ html.fp-on body {
   .site-footer__email-input {
     width: 100%;
     align-items: stretch;
+    text-align: left;
+  }
+
+  .site-footer__email-submit {
+    align-self: flex-start;
     text-align: left;
   }
 
