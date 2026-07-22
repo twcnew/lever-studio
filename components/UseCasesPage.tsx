@@ -67,11 +67,11 @@ export function UseCasesPage() {
         </section>
 
         <CustomersWallOfLove />
+      </div>
 
-        <div className="lp lp--clay cs-closing-band">
-          <ClosingSection />
-          <SiteFooter />
-        </div>
+      <div className="lp lp--clay cs-closing-band">
+        <ClosingSection />
+        <SiteFooter />
       </div>
     </div>
   );

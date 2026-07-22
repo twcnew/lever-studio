@@ -215,11 +215,11 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
         </div>
 
         <CaseStudyRelated study={study} />
+      </div>
 
-        <div className="lp lp--clay cs-closing-band">
-          <ClosingSection />
-          <SiteFooter />
-        </div>
+      <div className="lp lp--clay cs-closing-band">
+        <ClosingSection />
+        <SiteFooter />
       </div>
     </div>
   );

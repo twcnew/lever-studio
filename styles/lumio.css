@@ -4005,8 +4005,11 @@ html.fp-on body {
 .cs-body > .cs-cta,
 .cs-body > .cs-related,
 .cs-body > .cs-related-proof,
-.cs-body > .lp-module.cs-related-proof,
-.cs-body > .cs-closing-band {
+.cs-body > .lp-module.cs-related-proof {
+  position: relative;
+  z-index: 1;
+}
+.cs-shell > .cs-closing-band {
   position: relative;
   z-index: 1;
 }
@@ -4030,23 +4033,27 @@ html.fp-on body {
 
 .cs-eyebrow-pill {
   display: inline-flex;
-  padding: 6px 14px;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: clamp(20px, 2.5vw, 28px);
-}
-.cs-eyebrow-pill--brand {
-  background: var(--cs-hero-accent, var(--steel));
+  padding: 0;
   border: none;
-  color: #fff;
+  border-radius: 0;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: rgba(14, 10, 7, 0.45);
+  margin-bottom: 12px;
+}
+.cs-eyebrow-pill--brand {
+  background: transparent;
+  border: none;
+  color: rgba(14, 10, 7, 0.45);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cs-shell[data-accent-tone="light"] .cs-eyebrow-pill--brand {
+  color: rgba(67, 45, 114, 0.55);
 }
 
 .cs-glance {
@@ -4064,25 +4071,38 @@ html.fp-on body {
 }
 .cs-eyebrow {
   display: flex;
-  margin-bottom: clamp(16px, 2vw, 24px);
+  margin-bottom: 12px;
+}
+.cs-main .eyebrow.cs-eyebrow,
+.cs-article .eyebrow.cs-eyebrow {
+  gap: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(14, 10, 7, 0.45);
+}
+.cs-main .eyebrow.cs-eyebrow .sq,
+.cs-article .eyebrow.cs-eyebrow .sq {
+  display: none;
 }
 .cs-glance__quote {
   margin: 0;
-  font-family: inherit;
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 500;
-  font-style: normal;
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 400;
+  font-style: italic;
   line-height: 1.12;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   color: var(--ink);
   max-width: 720px;
 }
 .cs-glance__body {
   margin: 0 0 16px;
-  font-size: 16px;
-  line-height: 1.65;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: rgba(14, 10, 7, 0.66);
 }
 .cs-company-logo,
 .cs-glance__logo {
@@ -4107,32 +4127,32 @@ html.fp-on body {
   max-width: 76px;
 }
 .cs-glance__card {
-  padding: 20px 18px;
-  border-radius: 12px;
-  border: 1px solid var(--hairline);
-  background: #fff;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: transparent;
 }
 .cs-glance__card-label {
   display: block;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted-3);
+  color: rgba(14, 10, 7, 0.45);
   margin-bottom: 14px;
 }
 .cs-glance__desc {
   margin: 0 0 14px;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--muted-2);
-  letter-spacing: -0.02em;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.5;
+  color: rgba(14, 10, 7, 0.66);
+  letter-spacing: -0.015em;
 }
 .cs-glance__link {
   display: inline-flex;
   font-size: 13px;
   font-weight: 600;
-  color: var(--steel);
+  color: var(--ink);
   margin-bottom: 18px;
   letter-spacing: -0.02em;
 }
@@ -4154,10 +4174,10 @@ html.fp-on body {
 }
 .cs-glance__meta dt {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted-3);
+  color: rgba(14, 10, 7, 0.45);
 }
 .cs-glance__meta dd {
   margin: 0;
@@ -4172,18 +4192,18 @@ html.fp-on body {
 }
 
 .cs-section {
-  padding-top: clamp(40px, 5vw, 56px);
+  padding-top: clamp(48px, 6vw, 72px);
   scroll-margin-top: calc(var(--cs-sticky-top) + 16px);
 }
 .cs-section:first-child {
   padding-top: 0;
 }
 .cs-section__title {
-  margin: 0 0 20px;
-  font-size: clamp(28px, 3vw, 36px);
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3.4vw, 48px);
   font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 1.08;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
   color: var(--ink);
 }
 .cs-section__title-main {
@@ -4191,10 +4211,11 @@ html.fp-on body {
 }
 .cs-section__body {
   margin: 0 0 16px;
-  font-size: 16px;
-  line-height: 1.65;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: rgba(14, 10, 7, 0.66);
+  max-width: 52ch;
 }
 .cs-section__body:last-child {
   margin-bottom: 0;
@@ -4208,11 +4229,11 @@ html.fp-on body {
 }
 .cs-highlights__title {
   margin: 0 0 12px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: rgba(14, 10, 7, 0.45);
 }
 .cs-highlights__list {
   margin: 0;
@@ -4225,9 +4246,9 @@ html.fp-on body {
 .cs-highlights__list li {
   position: relative;
   padding-left: 1.15em;
-  font-size: 15px;
+  font-size: clamp(15px, 1.2vw, 16px);
   line-height: 1.5;
-  color: var(--ink);
+  color: rgba(14, 10, 7, 0.66);
 }
 .cs-highlights__list li::before {
   content: "•";
@@ -4248,9 +4269,9 @@ html.fp-on body {
 .cs-bullets li {
   position: relative;
   padding-left: 1.15em;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink);
+  font-size: clamp(15px, 1.2vw, 16px);
+  line-height: 1.5;
+  color: rgba(14, 10, 7, 0.66);
 }
 .cs-bullets li::before {
   content: "•";
@@ -4312,8 +4333,11 @@ html.fp-on body {
 }
 .cs-quote__text {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.55;
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
@@ -4337,9 +4361,9 @@ html.fp-on body {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--steel);
-  background: rgba(24, 73, 139, 0.08);
-  border: 1px solid rgba(24, 73, 139, 0.12);
+  color: var(--ink);
+  background: rgba(14, 10, 7, 0.05);
+  border: 1px solid var(--hairline);
 }
 .cs-quote__meta {
   display: flex;
@@ -4413,16 +4437,23 @@ html.fp-on body {
 }
 .cs-body .cs-related-proof,
 .cs-body .lp-module.cs-related-proof {
-  margin-top: clamp(56px, 7vw, 80px);
-  padding-top: clamp(40px, 5vw, 56px);
-  border-top: 1px solid var(--hairline);
+  margin-top: clamp(32px, 4vw, 48px);
+  padding-top: 0;
+  border-top: none;
 }
-.cs-body .cs-closing-band {
-  margin-top: clamp(40px, 5vw, 64px);
+.cs-closing-band {
   position: relative;
-}
-.cs-body .cs-closing-band .lp-module--closing {
+  background: #fff;
   margin-top: 0;
+}
+.cs-closing-band .lp-module--closing {
+  margin-top: 0;
+}
+.cs-body > .cs-closing-band {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .cs-related__title {
   margin: 0 0 10px;
