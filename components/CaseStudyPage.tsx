@@ -198,9 +198,6 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                       {paragraph}
                     </p>
                   ))}
-                  {study.impact.quote && (
-                    <CaseStudyQuoteBlock quote={study.impact.quote} />
-                  )}
                 </section>
               </div>
             </div>
