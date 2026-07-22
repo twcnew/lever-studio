@@ -29,7 +29,7 @@ export const HERO_LOGO_ENTRIES: HeroLogoEntry[] = [
     caseStudyHref: "/use-cases/swan",
     testimonial: {
       quote:
-        "Inbound triage automated — **~5 people’s worth of work** in one system, hot leads only.",
+        "Inbound without a BDR desk — **~5 people of triage** in the system, hot leads only.",
       author: "Bastien Roche",
       role: "Senior RevOps",
       initials: "BR",

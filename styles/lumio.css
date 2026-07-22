@@ -3643,11 +3643,25 @@ html.fp-on body {
   --cs-hero-grid-line: rgba(255, 255, 255, 0.32);
   --cs-hero-card: color-mix(in srgb, var(--cs-hero-accent) 72%, white);
   --cs-hero-rail-overhang: calc(var(--site-gutter) + 48px);
+  --cs-hero-ink: #fff;
   background: var(--cs-hero-accent);
-  color: #fff;
+  color: var(--cs-hero-ink);
   margin-top: 0;
   padding: calc(var(--cs-sticky-top) + 12px) var(--site-gutter)
     clamp(48px, 6vw, 64px);
+}
+/* Light brand washes (e.g. Swan lavender #D5C9ED): dark ink for contrast */
+.cs-hero[data-accent-tone="light"] {
+  --cs-hero-grid-line: rgba(67, 45, 114, 0.16);
+  --cs-hero-card: color-mix(in srgb, var(--cs-hero-accent) 55%, white);
+  --cs-hero-ink: #432d72;
+}
+.cs-shell[data-accent-tone="light"] .topnav.is-dark .topnav__cta {
+  background: #432d72;
+  color: #fff;
+}
+.cs-shell[data-accent-tone="light"] .topnav.is-dark .topnav__cta:hover {
+  background: color-mix(in srgb, #432d72 88%, black);
 }
 .cs-hero__inner {
   position: relative;
@@ -3727,14 +3741,14 @@ html.fp-on body {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  color: color-mix(in srgb, var(--cs-hero-ink, #fff) 65%, transparent);
 }
 .cs-hero__crumbs a {
-  color: rgba(255, 255, 255, 0.65);
+  color: color-mix(in srgb, var(--cs-hero-ink, #fff) 65%, transparent);
   transition: color 0.15s ease;
 }
 .cs-hero__crumbs a:hover {
-  color: #fff;
+  color: var(--cs-hero-ink, #fff);
 }
 .cs-hero__title {
   margin: 0;
@@ -3742,7 +3756,7 @@ html.fp-on body {
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 0.95;
-  color: #fff;
+  color: var(--cs-hero-ink, #fff);
 }
 .cs-hero__visual {
   width: min(100%, 200px);
@@ -3790,7 +3804,7 @@ html.fp-on body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--cs-hero-ink, #fff);
 }
 .cs-hero__logo svg {
   height: clamp(36px, 4vw, 52px);
@@ -3805,7 +3819,7 @@ html.fp-on body {
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 0.92);
+  color: color-mix(in srgb, var(--cs-hero-ink, #fff) 92%, transparent);
   text-align: left;
   align-self: start;
 }
@@ -3848,7 +3862,7 @@ html.fp-on body {
   font-weight: 500;
   letter-spacing: -0.05em;
   line-height: 1;
-  color: #fff;
+  color: var(--cs-hero-ink, #fff);
 }
 .cs-hero__metric-label {
   margin: 10px 0 0;
@@ -3857,7 +3871,7 @@ html.fp-on body {
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.72);
+  color: color-mix(in srgb, var(--cs-hero-ink, #fff) 72%, transparent);
 }
 .cs-hero__dots {
   position: absolute;
@@ -3932,6 +3946,9 @@ html.fp-on body {
   align-items: center;
   justify-content: center;
   color: #fff;
+}
+.cs-shell[data-accent-tone="light"] .cs-side-nav__logo {
+  color: #432d72;
 }
 .cs-side-nav__logo svg {
   height: 36px;

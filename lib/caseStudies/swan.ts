@@ -5,38 +5,37 @@ export const swanCaseStudy: CaseStudy = {
   logoId: "swan",
   company: "Swan",
   companyDescription:
-    "Swan is a European banking-as-a-service platform for embedded finance. Fintechs and enterprises issue accounts and cards under Swan's license, with GTM spanning Sales & International across Europe.",
+    "Swan is a European banking-as-a-service platform. Partners embed accounts, cards, and payments under Swan’s license — GTM runs across Sales & International in Europe.",
   websiteUrl: "https://swan.io",
   industry: "Embedded banking / Fintech B2B",
   headquarters: "Paris, France",
-  brandColor: "#8166C4",
-  heroHeadline:
-    "How Swan automated five people’s worth of inbound triage into one system",
+  brandColor: "#D5C9ED",
+  heroHeadline: "Swan stopped needing a BDR desk for inbound",
   heroImage: {
-    alt: "BRIEF: Product/mood shot — Swan lavender dashboard mock OR GTM team context with a soft “Talk to an Expert” overlay. Avoid raw Clay screenshots. Accent #8166C4.",
+    alt: "BRIEF: Soft product/mood shot — Swan lavender dashboard, or a quiet GTM desk with “Talk to an Expert” in frame. No raw Clay UI. Accent #D5C9ED.",
   },
   heroMetrics: [
     {
       value: "~5 people",
-      label: "of manual inbound triage replaced by the system",
+      label: "of inbound triage the system now runs",
       variant: "violet",
     },
     {
       value: "17h → <10 min",
-      label: "speed-to-first-contact on top inbound",
+      label: "first contact on the hottest leads",
       variant: "violet",
     },
     {
       value: "~0 h/week",
-      label: "left in manual BDR review",
+      label: "still spent on manual BDR review",
       variant: "violet",
     },
   ],
   heroQuote:
-    "I turned Swan’s inbound triage into a system that absorbs roughly five people’s worth of manual work — so AEs only see hot leads, and prospects get contacted in minutes.",
+    "I built the inbound routing so Swan didn’t need a room of people reading every “Talk to an Expert” lead. Hot ones hit AEs in minutes. Everything else gets handled without the noise.",
   intro: [
-    "Swan sells banking-as-a-service into a crowded European fintech market. Inbound from swan.io — the “Talk to an Expert” form — was the hottest source of new pipeline, but it depended on a manual BDR layer: humans reading every lead, deciding fit, and pinging AEs.",
-    "That layer doesn’t scale. When coverage broke, leads sat without an owner, speed-to-first-contact ballooned to ~17 hours, and AEs got alerted on everything. The real cost wasn’t only latency — it was headcount trapped in triage instead of selling.",
+    "Swan’s best new pipeline still came from the website form: Talk to an Expert. Before anyone booked a call, someone had to open the lead, decide if it was real, and ping the right AE.",
+    "That job ate real capacity. When the coverage slipped, leads sat for ~17 hours and AEs got pinged on junk. The problem wasn’t only speed — it was five people’s worth of triage stuck in a queue that shouldn’t have been human.",
   ],
   featuredQuote: {
     text: "Alexis shipped a fully automated lead routing system. AEs only get alerted on genuinely hot leads, and prospects are contacted in minutes.",
@@ -45,88 +44,85 @@ export const swanCaseStudy: CaseStudy = {
     avatarSrc: "/testimonials/bastien-roche-swan.png?v=8",
   },
   heroPopoverQuote:
-    "Inbound triage automated — **~5 people’s worth of work** in one system, hot leads only.",
+    "Inbound without a BDR desk — **~5 people of triage** in the system, hot leads only.",
   proofMetric: { value: "~5", label: "people of triage automated" },
   impactHighlights: [
-    "Roughly five people’s worth of manual inbound triage absorbed by one production system",
-    "Speed-to-first-contact on top inbound: ~17 hours → under 10 minutes",
-    "Manual BDR review dropped to ~0 hours/week after launch",
-    "~1,700 new TAP contacts associated across 335 companies",
-    "Forecast agent shipped so RevOps reporting keeps running without a dedicated hire",
+    "Inbound triage that used to need ~5 people now runs in production",
+    "Hottest leads: ~17 hours to under 10 minutes to first contact",
+    "Manual BDR review basically gone (~0 h/week)",
+    "~1,700 new people mapped into TAP across 335 companies",
+    "Forecast agent still writes the monthly brief without a RevOps hire",
   ],
   problem: {
     title: "The problem",
     body: [
-      "The task: replace a person-shaped inbound process with a system that qualifies and routes every lead — without losing genuinely hot opportunities, and without flooding AEs with noise.",
-      "Success meant the sales org no longer needed a standing BDR triage bench for this motion. The automation had to carry the volume those seats were doing, with docs and ownership so it survives handoff.",
+      "I had to take that triage off people’s plates — qualify every inbound lead, route it cleanly, and keep AEs from drowning in noise.",
+      "If it only worked while I was watching Clay, it wasn’t done. Docs, ownership, and a path to fix breakage were part of the build.",
     ],
   },
   solution: {
     title: "The solution",
     body: [
-      "I built a two-table Clay pipeline: validation → enrichment → ICP-fit scoring → tiering (T1–T3) → bundle classification (A/B/C/D), wired into HubSpot, Lemlist, Dust, n8n, Slack, and Aircall.",
-      "Bundle A (hot) triggers an instant AE Slack alert with a booking link. Bundle B runs an automated nurture sequence. Bundle C gets a polite automated decline. Bundle D is logged only — silent, no noise.",
-      "I wrote the full system docs and a maintenance guide (AE onboarding/offboarding, volume management, debugging) so routing keeps running after handoff. When gaps appeared in production, I shipped Inbound 2.0: a human-in-the-loop Lemlist review for non-TAP leads while keeping full automation for TAP.",
+      "Each lead goes through validation, enrichment, an ICP score, then a tier. From there it lands in one of four buckets.",
+      "Hot leads ping the AE on Slack with a booking link. Decent-but-not-ready get a nurture sequence. Clear no-fits get a polite decline. The rest are logged and left alone.",
+      "I shipped it with a maintenance guide so someone else can onboard AEs and debug volume. When a few leads started slipping, I added a light human check for non-TAP — TAP stays fully automatic.",
     ],
   },
   useCases: [
     {
       number: "01",
-      title: "Automated inbound routing (4-Bundle)",
+      title: "Inbound routing that doesn’t need a BDR queue",
       navLabel: "Inbound routing",
       body: [
-        "Situation: inbound “Talk to an Expert” depended on manual BDR triage. When that coverage failed, leads sat ~17 hours and AEs were alerted on everything — a multi-person workload for a single bottlenecked process.",
-        "Task: ship, largely solo, a qualify-and-route system that absorbs that triage capacity — protecting hot leads and killing AE noise — so the motion no longer needs a dedicated BDR bench.",
-        "Action: Clay scoring and four-bundle routing into Slack, HubSpot, Lemlist, and Aircall; production launch with company-wide GTM kickoff; Inbound 2.0 HITL for non-TAP edge cases; full maintenance docs for handoff.",
-        "Result: roughly five people’s worth of inbound triage work runs in the system. Top-lead speed-to-contact moved from ~17 hours to under 10 minutes. Manual BDR review went to ~0 hours/week. AEs only see the hot slice.",
+        "Talk to an Expert used to mean a human read every submission. When that stopped working, first contact blew out to ~17 hours and AEs saw everything.",
+        "I built the qualify-and-route flow myself and put it in production — scoring, four buckets, Slack alerts, nurture, decline — plus notes so the team can keep it alive.",
+        "The desk that used to absorb ~5 people of triage work is now the system. Top leads move in under 10 minutes. Manual review is basically gone.",
       ],
       bullets: [
-        "~5 people’s worth of triage capacity automated",
-        "17h → under 10 minutes on top inbound",
-        "Shipped to production with maintenance docs for handoff",
+        "~5 people of triage capacity in the system",
+        "17h → under 10 minutes on hot inbound",
+        "Live in production, with a handoff guide",
       ],
       visual: {
-        alt: "BRIEF: Simple 4-bundle diagram — A hot → AE Slack + booking / B nurture / C decline / D silent. Clean light background, accent #8166C4. No cluttered Clay UI.",
-        caption: "Four-bundle inbound routing",
+        alt: "BRIEF: Clean 4-bucket diagram — hot → AE Slack + booking / nurture / decline / silent log. Light background, accent #D5C9ED. No cluttered Clay UI.",
+        caption: "Four-bucket inbound routing",
       },
     },
     {
       number: "02",
-      title: "TAP enrichment and champion coverage",
+      title: "Finding the right people inside TAP accounts",
       navLabel: "TAP enrichment",
       body: [
-        "Situation: the Target Account Program lacked mapped contacts by persona — Product, C-level, GTM, and Tech decision-makers — so AEs couldn’t reliably find champions inside priority accounts.",
-        "Task: build automated enrichment that systematically identifies and classifies the right contacts at scale across the TAP list.",
-        "Action: Clay agents (Claude-backed) with per-company persona caps; company-level org-chart views in HubSpot; on-demand champion finder via Clay + Sales Navigator scraping for named accounts and FI targeting motions.",
-        "Result: ~1,700 new people associated with 335 companies added to the TAP. Hundreds of phone numbers retrieved via Clay credits and synced to HubSpot. Champion lists delivered for 10+ named target accounts across enterprise and neobank motions.",
+        "Priority accounts were on the list. The people AEs actually needed — product, C-level, GTM, tech — often weren’t.",
+        "I set up enrichment that pulls and sorts contacts by role, with caps so we don’t dump fifty names on every company. Champions for named accounts on demand when an AE asked.",
+        "About 1,700 people landed on 335 TAP companies, with phones where we could get them cheap. Enough coverage that AEs stop staring at empty accounts.",
       ],
       bullets: [
-        "~1,700 TAP contacts across 335 companies",
-        "Persona-capped enrichment to control volume and quality",
-        "Champion lists for 10+ named target accounts",
+        "~1,700 contacts across 335 TAP companies",
+        "Role caps so lists stay usable",
+        "Champion lists for 10+ named accounts",
       ],
       visual: {
-        alt: "BRIEF: Anonymized TAP org-chart / persona map (Product, C-level, GTM, Tech) or cleaned HubSpot contact cards. No real personal data visible.",
+        alt: "BRIEF: Anonymized persona map (Product / C-level / GTM / Tech) or cleaned HubSpot-style contact cards. No real personal data.",
         caption: "TAP persona coverage",
       },
     },
     {
       number: "03",
-      title: "AI forecasting agent for RevOps continuity",
+      title: "A forecast brief that writes itself",
       navLabel: "Forecast agent",
       body: [
-        "Situation: weekly forecasting was a manual compile. Accuracy sat around 65–70%, and at-risk deals were often caught informally.",
-        "Task: design and ship an AI agent system that automates forecast compilation and deal-health visibility — and keep RevOps forecasting running after the internship with no dedicated hire lined up yet.",
-        "Action: architected a multi-agent Dust design; shipped a working Forecast Agent V1 that auto-generates a monthly Notion report (Closed Won / Commit / Best Case by AE and market, coverage, at-risk alerts); iterated to V2 from direct VP Sales feedback on TL;DR, numbering, and stage conversion.",
-        "Result: forecasting moved from a manual senior-time sink to a repeatable agent-generated brief. The design goal was continuity: the function keeps running without me in the seat.",
+        "Weekly forecasting was a manual pile of CRM pulls. Accuracy floated around 65–70%, and shaky deals got noticed late.",
+        "I designed an agent setup and shipped the first forecast agent: each month it drops a Notion brief — won / commit / best case by AE and market, coverage, who’s at risk. Julio pushed on the TL;DR and conversion views; I shipped a V2 from that.",
+        "The point was boring on purpose: after I left, the report still shows up without hiring a full-time RevOps person to rebuild it every week.",
       ],
       bullets: [
-        "Monthly Notion forecast report generated by the agent",
-        "Iterated with VP Sales on TL;DR and conversion views",
-        "Handover docs so forecasting survives headcount gaps",
+        "Monthly Notion brief from the agent",
+        "TL;DR and conversion views from VP Sales feedback",
+        "Built to keep running without me",
       ],
       visual: {
-        alt: "BRIEF: Notion forecast report screenshot with TL;DR visible — blur sensitive € figures and AE names if needed. Or a clean mock of the agent brief.",
+        alt: "BRIEF: Notion forecast screenshot with TL;DR visible — blur € figures and AE names if needed. Or a clean mock of the brief.",
         caption: "Forecast agent brief",
       },
       quote: {
@@ -139,9 +135,9 @@ export const swanCaseStudy: CaseStudy = {
   impact: {
     title: "Impact",
     body: [
-      "Inbound no longer depends on a standing manual triage layer. The system carries roughly five people’s worth of that work: hot leads reach AEs in minutes, noise is filtered out, and review hours go to zero.",
-      "TAP coverage and champion finding give AEs mapped decision-makers instead of blank accounts. The forecast agent keeps a leadership-grade view alive without a dedicated RevOps headcount.",
-      "The lasting change is operational: routing rules, docs, and handoff paths — capacity in the system, not trapped in seats.",
+      "Inbound doesn’t wait on a triage desk anymore. The system carries about five people’s worth of that work — hot leads to AEs fast, noise filtered, review hours near zero.",
+      "TAP accounts have real contacts on them. The forecast brief still lands without a dedicated RevOps seat.",
+      "What stuck is the boring part: rules, docs, and a system someone else can run.",
     ],
     quote: {
       text: "Alexis shipped a fully automated lead routing system. AEs only get alerted on genuinely hot leads, and prospects are contacted in minutes.",
@@ -152,12 +148,12 @@ export const swanCaseStudy: CaseStudy = {
     metrics: [
       {
         value: "~5 people",
-        label: "of manual inbound triage replaced by the system",
+        label: "of inbound triage the system now runs",
         variant: "violet",
       },
       {
         value: "17h → <10 min",
-        label: "speed-to-first-contact on top inbound",
+        label: "first contact on the hottest leads",
         variant: "violet",
       },
       {
@@ -169,16 +165,15 @@ export const swanCaseStudy: CaseStudy = {
   },
   relatedSlugs: ["flex", "happypal"],
   relatedSubtitle:
-    "Discover how other teams build GTM systems tailored to complex products.",
+    "Other GTM systems built for messy ICPs and real sales teams.",
   indexCard: {
-    headline:
-      "How Swan automated five people’s worth of inbound triage into one system",
+    headline: "Swan stopped needing a BDR desk for inbound",
   },
   wallSnippet:
-    "Inbound triage automated — roughly five people’s worth of work in one system, AEs only see hot leads.",
+    "Inbound without a BDR desk — about five people of triage in the system, hot leads only.",
   seo: {
     title: "Swan Case Study — Lever",
     description:
-      "How Alexis automated Swan’s inbound triage: roughly five people’s worth of manual work into one system, with TAP enrichment and an AI forecast agent.",
+      "How Alexis took Swan’s inbound triage off a BDR desk and into one system — about five people of triage automated, hot leads in minutes.",
   },
 };

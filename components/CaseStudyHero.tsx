@@ -19,6 +19,17 @@ export function CaseStudyHero({ study }: CaseStudyHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
+  const accentTone = (() => {
+    const raw = study.brandColor.replace("#", "").trim();
+    if (raw.length !== 6) return undefined;
+    const r = parseInt(raw.slice(0, 2), 16);
+    const g = parseInt(raw.slice(2, 4), 16);
+    const b = parseInt(raw.slice(4, 6), 16);
+    if ([r, g, b].some((n) => Number.isNaN(n))) return undefined;
+    const L = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    return L > 0.65 ? ("light" as const) : undefined;
+  })();
+
   useEffect(() => {
     if (metrics.length <= 1 || paused || prefersReducedMotion()) {
       return;
@@ -34,6 +45,7 @@ export function CaseStudyHero({ study }: CaseStudyHeroProps) {
   return (
     <header
       className="cs-hero"
+      data-accent-tone={accentTone}
       style={{ "--cs-hero-accent": study.brandColor } as CSSProperties}
     >
       <div className="cs-hero__inner">

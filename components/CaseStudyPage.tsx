@@ -20,6 +20,17 @@ import {
 } from "@/lib/caseStudies";
 import type { CaseStudy, CaseStudyUseCase } from "@/lib/caseStudies/types";
 
+function isLightBrandAccent(hex: string) {
+  const raw = hex.replace("#", "").trim();
+  if (raw.length !== 6) return false;
+  const r = parseInt(raw.slice(0, 2), 16);
+  const g = parseInt(raw.slice(2, 4), 16);
+  const b = parseInt(raw.slice(4, 6), 16);
+  if ([r, g, b].some((n) => Number.isNaN(n))) return false;
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  return luminance > 0.65;
+}
+
 type CaseStudyPageProps = {
   study: CaseStudy;
 };
@@ -109,10 +120,12 @@ function UseCaseSection({ useCase }: { useCase: CaseStudyUseCase }) {
 
 export function CaseStudyPage({ study }: CaseStudyPageProps) {
   const navItems = getCaseStudyNavItems(study);
+  const accentTone = isLightBrandAccent(study.brandColor) ? "light" : undefined;
 
   return (
     <div
       className="cs-shell"
+      data-accent-tone={accentTone}
       style={{ "--cs-hero-accent": study.brandColor } as CSSProperties}
     >
       <TopNav />
