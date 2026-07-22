@@ -21,8 +21,8 @@ export const swanCaseStudy: CaseStudy = {
   },
   heroMetrics: [
     {
-      value: "~5 people",
-      label: "of inbound triage the system now runs",
+      value: "5 BDRs",
+      label: "replaced by one inbound system",
       variant: "violet",
     },
     {
