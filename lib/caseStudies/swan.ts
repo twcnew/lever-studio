@@ -26,16 +26,16 @@ export const swanCaseStudy: CaseStudy = {
       variant: "violet",
     },
     {
-      value: "~0 h/week",
-      label: "still spent on manual BDR review",
+      value: "1,481",
+      label: "FI companies sized for board reporting",
       variant: "violet",
     },
   ],
   heroQuote:
-    "I built the inbound routing so Swan didn’t need people reading every Talk to an Expert lead. Hot ones hit AEs in minutes. The rest get handled without the noise.",
+    "I shipped inbound routing so hot leads hit AEs in minutes, then cleaned the data layer, sized markets for leadership, and left forecast and tooling work that still runs without me.",
   intro: [
-    "Swan’s best new pipeline still came from the website form, Talk to an Expert. Before anyone booked a call, someone had to open the lead, decide if it was real, and ping the right AE.",
-    "That job ate real capacity. When coverage slipped, leads sat for ~17 hours and AEs got pinged on junk. About five people were stuck sorting that queue.",
+    "Swan’s best new pipeline still came from Talk to an Expert. Before anyone booked a call, someone had to open the lead, decide if it was real, and ping the right AE. When that coverage slipped, leads sat for ~17 hours.",
+    "I shipped the routing system that replaced that desk, then kept going: CRM and TAP coverage AEs could use, board-ready FI market sizing, a health vertical launch list, a forecast agent, and tooling cuts that saved real spend.",
   ],
   featuredQuote: {
     text: "Alexis shipped a fully automated lead routing system. AEs only get alerted on genuinely hot leads, and prospects are contacted in minutes.",
@@ -44,28 +44,30 @@ export const swanCaseStudy: CaseStudy = {
     avatarSrc: "/testimonials/bastien-roche-swan.png?v=8",
   },
   heroPopoverQuote:
-    "No BDR desk on inbound. About **~5 people of triage** run in the system. Hot leads only.",
+    "No BDR desk on inbound. About **~5 people of triage** in the system. Plus board-ready market sizing and agents that keep running.",
   proofMetric: { value: "~5", label: "people of triage automated" },
   impactHighlights: [
-    "Inbound triage that used to need ~5 people now runs in production",
-    "Hottest leads: ~17 hours to under 10 minutes to first contact",
-    "Manual BDR review down to ~0 h/week",
-    "~1,700 new people mapped into TAP across 335 companies",
-    "Forecast agent still writes the monthly brief without a RevOps hire",
+    "Inbound: ~17h → under 10 min on hot leads; SLA under 2h hit ~99% after launch",
+    "Sample run: 240 leads in, 38 routed (noise filtered before AEs)",
+    "~1,700 new TAP contacts across 335 companies",
+    "1,481 FI companies sized for board reporting across 4 segments",
+    "49 Compliance-validated health accounts added to TAP",
+    "Forecast agent recovers ~8h/week of senior time; still runs without a RevOps hire",
+    "~37k wasted enrichment credits/month stopped",
+    "Full CRM audit on ~40k records: 2–3 days → ~1h30 with Claude Code",
   ],
   problem: {
     title: "The problem",
     body: [
-      "I had to get that triage off people’s plates: qualify every inbound lead, route it cleanly, and keep AEs from drowning in noise.",
-      "If it only worked while I was watching Clay, it wasn’t done. Docs, ownership, and a way to fix breakage were part of the build.",
+      "Inbound triage sat on people. The CRM had duplication, missing firmographics, and TAP accounts without the right contacts. Forecasting was a weekly manual pile. Leadership had no defensible FI account universe for board reporting.",
+      "I needed systems that qualify and route leads, give AEs usable coverage, produce board-grade lists, and keep running after I left.",
     ],
   },
   solution: {
     title: "The solution",
     body: [
-      "Each lead goes through validation, enrichment, an ICP score, then a tier. From there it lands in one of four buckets.",
-      "Hot leads ping the AE on Slack with a booking link. Decent-but-not-ready get a nurture sequence. Clear no-fits get a polite decline. The rest are logged and left alone.",
-      "I shipped it with a maintenance guide so someone else can onboard AEs and debug volume. When a few leads started slipping, I added a light human check for non-TAP. TAP stays fully automatic.",
+      "I built the inbound qualify-and-route flow first: score every lead, four buckets, Slack for hot ones, nurture or decline for the rest, docs so someone else can own it.",
+      "In parallel I cleaned and enriched CRM/TAP data, built FI and health account universes for Marketing and Sales, shipped a monthly forecast agent, and cut dead automation spend while speeding RevOps work with coding tools the team adopted.",
     ],
   },
   useCases: [
@@ -75,32 +77,32 @@ export const swanCaseStudy: CaseStudy = {
       navLabel: "Inbound routing",
       body: [
         "Talk to an Expert meant a human read every submission. When that stopped working, first contact blew out to ~17 hours and AEs saw everything.",
-        "I built the qualify-and-route flow and put it in production: scoring, four buckets, Slack alerts, nurture, decline, plus notes so the team can keep it alive.",
-        "Roughly five people’s triage work sits in that system now. Top leads move in under 10 minutes. Manual review is near zero.",
+        "I built the qualify-and-route flow and put it in production: scoring, four buckets, Slack alerts, nurture, decline, plus a maintenance guide. When a few leads slipped, I added a light human check for non-TAP. TAP stays fully automatic.",
+        "Roughly five people’s triage work sits in that system. Top leads move in under 10 minutes. Manual BDR review is near zero. Post-launch, the under-2h SLA held ~99% of the time.",
       ],
       bullets: [
-        "~5 people of triage capacity in the system",
         "17h → under 10 minutes on hot inbound",
-        "Live in production, with a handoff guide",
+        "SLA under 2h hit ~99% after launch",
+        "Sample: 240 in → 38 routed across four buckets",
       ],
       visual: {
-        alt: "BRIEF: Clean 4-bucket diagram — hot → AE Slack + booking / nurture / decline / silent log. Light background, accent #D5C9ED. No cluttered Clay UI.",
+        alt: "BRIEF: Clean 4-bucket diagram — hot → AE Slack + booking / nurture / decline / silent log. Light background, accent #D5C9ED.",
         caption: "Four-bucket inbound routing",
       },
     },
     {
       number: "02",
-      title: "Finding the right people inside TAP accounts",
-      navLabel: "TAP enrichment",
+      title: "CRM hygiene and TAP contacts AEs can use",
+      navLabel: "CRM & TAP",
       body: [
-        "Priority accounts were on the list. The people AEs actually needed (product, C-level, GTM, tech) often weren’t.",
-        "I set up enrichment that pulls and sorts contacts by role, with caps so we don’t dump fifty names on every company. Champions for named accounts when an AE asked.",
-        "About 1,700 people landed on 335 TAP companies, with phones where we could get them cheap. Enough coverage that AEs stop staring at empty accounts.",
+        "HubSpot had real debt: heavy duplication, missing industry data, ownership gaps. Priority TAP accounts were on the list; the people AEs needed often weren’t.",
+        "I ran a full CRM audit, deduped and enriched records with an action log, then built persona enrichment for TAP with role caps so lists stay usable. On demand I pulled champion lists for named accounts. A Dreamdata cross-check also flagged hundreds of Tier-0 companies outside pipeline tracking.",
+        "About 1,700 people landed on 335 TAP companies, with phones where we could get them cheap. AEs stopped staring at empty accounts.",
       ],
       bullets: [
         "~1,700 contacts across 335 TAP companies",
-        "Role caps so lists stay usable",
-        "Champion lists for 10+ named accounts",
+        "CRM audit surfaced thousands of missing industries, hard bounces, and ownership gaps",
+        "Champion lists for 10+ named accounts on demand",
       ],
       visual: {
         alt: "BRIEF: Anonymized persona map (Product / C-level / GTM / Tech) or cleaned HubSpot-style contact cards. No real personal data.",
@@ -109,16 +111,54 @@ export const swanCaseStudy: CaseStudy = {
     },
     {
       number: "03",
+      title: "FI market sizing leadership could take to the board",
+      navLabel: "FI market sizing",
+      body: [
+        "Marketing needed a board-ready count for Financial Institutions. An early list was judged not exhaustive enough. No consolidated universe existed across neobanks, lending, insurance card issuers, and legacy/foreign banks.",
+        "I cross-referenced the EBA licensing register with HubSpot and web research across four sub-segments, ran cleaning passes, and documented every exclusion category so the number would hold up to scrutiny.",
+        "Final count: 1,481 qualified companies (722 / 239 / 398 / 122), with 302 exclusions logged by reason. That dataset became the reference behind Swan’s FI target-account work.",
+      ],
+      bullets: [
+        "1,481 companies across 4 FI segments",
+        "302 exclusions documented with reasons",
+        "Built for board / market-sizing reporting",
+      ],
+      visual: {
+        alt: "BRIEF: Clean four-segment market-sizing diagram or table mock (Neobanks / Lending / Insurance / Legacy banks) with 1,481 total. Accent #D5C9ED. No confidential partner names.",
+        caption: "FI market sizing for the board",
+      },
+    },
+    {
+      number: "04",
+      title: "Health vertical launch list Sales and Compliance could trust",
+      navLabel: "Health vertical",
+      body: [
+        "Swan was opening a new segment: health insurance / mutuelles advance cards in France. Sales had no account data or domain knowledge. Compliance had eligibility rules that had to stick.",
+        "I built a knowledge base for the regulated space, maintained a target list enriched with size and LinkedIn data, and cross-checked it against Compliance criteria before anything hit HubSpot. Same week I enriched guest lists for healthcare VIP dinners Marketing was running.",
+        "Forty-nine Compliance-validated companies landed in TAP. The knowledge base became the ramp doc for the vertical.",
+      ],
+      bullets: [
+        "49 Compliance-validated companies added to TAP",
+        "Knowledge base for Sales / Marketing ramp",
+        "Guest-list enrichment for healthcare VIP events",
+      ],
+      visual: {
+        alt: "BRIEF: Soft vertical-launch visual — anonymized account list or knowledge-base index for health/mutuelles. Accent #D5C9ED. No real insurer logos required.",
+        caption: "Health vertical account universe",
+      },
+    },
+    {
+      number: "05",
       title: "A forecast brief that writes itself",
       navLabel: "Forecast agent",
       body: [
         "Weekly forecasting was a manual pile of CRM pulls. Accuracy floated around 65–70%, and shaky deals got noticed late.",
-        "I designed an agent setup and shipped the first forecast agent. Each month it drops a Notion brief: won / commit / best case by AE and market, coverage, who’s at risk. Julio pushed on the TL;DR and conversion views. I shipped a V2 from that.",
-        "After I left, the report still shows up. No full-time RevOps hire to rebuild it every week.",
+        "I designed a multi-agent forecast setup and shipped the first working agent. Each month it drops a Notion brief: won / commit / best case by AE and market, coverage, who’s at risk. Julio pushed on the TL;DR and conversion views. I shipped a V2 from that.",
+        "Roughly eight hours a week of senior time comes back. After I left, the report still shows up without a dedicated RevOps hire.",
       ],
       bullets: [
         "Monthly Notion brief from the agent",
-        "TL;DR and conversion views from VP Sales feedback",
+        "~8h/week of senior time recovered",
         "Built to keep running without me",
       ],
       visual: {
@@ -131,13 +171,32 @@ export const swanCaseStudy: CaseStudy = {
         role: "VP Sales",
       },
     },
+    {
+      number: "06",
+      title: "Cut wasted spend and speed up RevOps work",
+      navLabel: "Ops leverage",
+      body: [
+        "The GTM automation stack had grown organically. Legacy flows nobody tracked were still burning enrichment credits every month.",
+        "I audited the stack end to end, paused unused flows, and mapped enrichment lineage so the team had a reference. Separately I proved coding tools on real RevOps tasks, got licenses approved, and used them on the full CRM audit and other pulls.",
+        "About 37,000 wasted credits per month stopped. The CRM audit that used to take two to three days dropped to about an hour and a half.",
+      ],
+      bullets: [
+        "~37k enrichment credits/month stopped",
+        "CRM audit ~40k records: 2–3 days → ~1h30",
+        "First consolidated map of enrichment tooling",
+      ],
+      visual: {
+        alt: "BRIEF: Simple before/after ops visual — wasted credits stopped + audit time 2–3 days → 1h30. Accent #D5C9ED. No raw tool sprawl screenshots.",
+        caption: "Ops leverage",
+      },
+    },
   ],
   impact: {
     title: "Impact",
     body: [
-      "Inbound doesn’t wait on a triage desk anymore. The system runs about five people’s load: hot leads to AEs fast, noise filtered, review hours near zero.",
-      "TAP accounts have real contacts on them. The forecast brief still lands without a dedicated RevOps seat.",
-      "I left rules, docs, and a system someone else can run.",
+      "Inbound doesn’t wait on a triage desk. Hot leads reach AEs in minutes, with noise filtered before it hits Slack.",
+      "Sales has TAP coverage and champion lists. Leadership has a board-ready FI universe and a Compliance-safe health launch list.",
+      "The forecast brief still lands. Dead automation spend is gone. The tooling that sped audits is still in the team’s hands.",
     ],
     quote: {
       text: "Alexis shipped a fully automated lead routing system. AEs only get alerted on genuinely hot leads, and prospects are contacted in minutes.",
@@ -157,8 +216,8 @@ export const swanCaseStudy: CaseStudy = {
         variant: "violet",
       },
       {
-        value: "~1,700",
-        label: "new TAP contacts across 335 companies",
+        value: "1,481",
+        label: "FI companies sized for board reporting",
         variant: "violet",
       },
     ],
@@ -169,10 +228,10 @@ export const swanCaseStudy: CaseStudy = {
     headline: "Swan stopped needing a BDR desk for inbound",
   },
   wallSnippet:
-    "No BDR desk on inbound. About five people of triage in the system. Hot leads only.",
+    "No BDR desk on inbound. About five people of triage in the system, plus board-ready market sizing and agents that keep running.",
   seo: {
     title: "Swan Case Study — Lever",
     description:
-      "How Alexis took Swan’s inbound triage off a BDR desk and into one system: about five people of triage automated, hot leads in minutes.",
+      "How Alexis shipped Swan’s inbound routing, TAP coverage, board-ready FI market sizing, a health vertical launch list, and forecast agents that keep running.",
   },
 };
