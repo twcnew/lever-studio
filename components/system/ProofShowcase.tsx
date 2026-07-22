@@ -1,11 +1,21 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { buildProofShowcaseItems } from "@/lib/proofShowcase";
 import { ProofCard } from "./ProofCard";
 
-export function ProofShowcase() {
-  const items = buildProofShowcaseItems();
+type ProofShowcaseProps = {
+  excludeSlug?: string;
+};
+
+export function ProofShowcase({ excludeSlug }: ProofShowcaseProps) {
+  const items = useMemo(() => {
+    const all = buildProofShowcaseItems();
+    return excludeSlug
+      ? all.filter((item) => item.slug !== excludeSlug)
+      : all;
+  }, [excludeSlug]);
+
   const viewportRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
@@ -28,7 +38,7 @@ export function ProofShowcase() {
       viewport.removeEventListener("scroll", updateNav);
       window.removeEventListener("resize", updateNav);
     };
-  }, [updateNav]);
+  }, [updateNav, items.length]);
 
   const scrollByCard = useCallback((direction: 1 | -1) => {
     const viewport = viewportRef.current;
@@ -37,6 +47,10 @@ export function ProofShowcase() {
     const step = cell ? cell.offsetWidth + 16 : viewport.clientWidth * 0.8;
     viewport.scrollBy({ left: direction * step, behavior: "smooth" });
   }, []);
+
+  if (items.length === 0) {
+    return null;
+  }
 
   return (
     <figure className="proof-board" aria-label="Client case studies">

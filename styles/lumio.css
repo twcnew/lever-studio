@@ -4003,7 +4003,9 @@ html.fp-on body {
 }
 .cs-body > .cs-container,
 .cs-body > .cs-cta,
-.cs-body > .cs-related {
+.cs-body > .cs-related,
+.cs-body > .cs-related-proof,
+.cs-body > .lp-module.cs-related-proof {
   position: relative;
   z-index: 1;
 }
@@ -4408,6 +4410,12 @@ html.fp-on body {
   padding-top: clamp(40px, 5vw, 56px);
   border-top: 1px solid var(--hairline);
 }
+.cs-body .cs-related-proof,
+.cs-body .lp-module.cs-related-proof {
+  margin-top: clamp(56px, 7vw, 80px);
+  padding-top: clamp(40px, 5vw, 56px);
+  border-top: 1px solid var(--hairline);
+}
 .cs-related__title {
   margin: 0 0 10px;
   font-size: clamp(24px, 2.8vw, 32px);
@@ -4426,11 +4434,6 @@ html.fp-on body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-}
-.cs-related__grid .proof-board__cell {
-  flex: none;
-  width: 100%;
-  max-width: none;
 }
 
 /* Shared case study cards (index + related) */
