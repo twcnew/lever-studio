@@ -28,10 +28,12 @@ export const HERO_LOGO_ENTRIES: HeroLogoEntry[] = [
     markClass: "hero__logo-mark--swan",
     caseStudyHref: "/use-cases/swan",
     testimonial: {
-      quote: "Outbound rebuilt on **signal-driven ABM** — pipeline doubled in one quarter.",
-      author: "Marie Dupont",
-      role: "VP Marketing",
-      initials: "MD",
+      quote:
+        "Fully automated lead routing — **AEs only see hot leads**, prospects contacted in minutes.",
+      author: "Bastien Roche",
+      role: "Senior RevOps",
+      initials: "BR",
+      avatarSrc: "/testimonials/bastien-roche-swan.png?v=8",
     },
   },
   {

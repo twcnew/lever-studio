@@ -20,7 +20,7 @@ export type ProofShowcaseItem = {
 
 /** Curated homepage metrics — add a slug here when a new case study ships. */
 const PROOF_METRICS: Record<CaseStudy["logoId"], { value: string; label: string }> = {
-  swan: { value: "2×", label: "pipeline in one quarter" },
+  swan: { value: "<10 min", label: "inbound speed-to-contact" },
   flex: { value: "3×", label: "reply rate on technical buyers" },
   happypal: { value: "10+", label: "qualified meetings / week" },
 };
