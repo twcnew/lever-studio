@@ -4088,12 +4088,12 @@ html.fp-on body {
 }
 .cs-glance__quote {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(28px, 3.4vw, 42px);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
   color: var(--ink);
   max-width: 720px;
 }
