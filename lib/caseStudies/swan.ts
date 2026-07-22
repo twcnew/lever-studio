@@ -12,7 +12,8 @@ export const swanCaseStudy: CaseStudy = {
   brandColor: "#D5C9ED",
   heroHeadline: "Swan stopped needing a BDR desk for inbound",
   heroImage: {
-    alt: "BRIEF: Soft product/mood shot — Swan lavender dashboard, or a quiet GTM desk with “Talk to an Expert” in frame. No raw Clay UI. Accent #D5C9ED.",
+    src: "/case-studies/swan-hero.jpg",
+    alt: "Swan wordmark in textured black paint on white.",
   },
   heroMetrics: [
     {
