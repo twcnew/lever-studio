@@ -15,6 +15,10 @@ export const swanCaseStudy: CaseStudy = {
     src: "/case-studies/swan-hero.jpg",
     alt: "Swan wordmark in textured black paint on white.",
   },
+  sideNavImage: {
+    src: "/case-studies/swan-side-nav.jpg",
+    alt: "Painted isometric ring mark on white.",
+  },
   heroMetrics: [
     {
       value: "~5 people",
