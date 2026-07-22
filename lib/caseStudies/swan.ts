@@ -9,7 +9,7 @@ export const swanCaseStudy: CaseStudy = {
   websiteUrl: "https://swan.io",
   industry: "Embedded banking / Fintech B2B",
   headquarters: "Paris, France",
-  brandColor: "#D5C9ED",
+  brandColor: "#F8D5BE",
   heroHeadline: "Swan stopped needing a BDR desk for inbound",
   heroImage: {
     src: "/case-studies/swan-hero.jpg",

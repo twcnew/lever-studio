@@ -3650,18 +3650,18 @@ html.fp-on body {
   padding: calc(var(--cs-sticky-top) + 12px) var(--site-gutter)
     clamp(48px, 6vw, 64px);
 }
-/* Light brand washes (e.g. Swan lavender #D5C9ED): dark ink for contrast */
+/* Light brand washes (e.g. Swan peach #F8D5BE): dark warm ink for contrast */
 .cs-hero[data-accent-tone="light"] {
-  --cs-hero-grid-line: rgba(67, 45, 114, 0.16);
+  --cs-hero-grid-line: rgba(47, 33, 24, 0.16);
   --cs-hero-card: color-mix(in srgb, var(--cs-hero-accent) 55%, white);
-  --cs-hero-ink: #432d72;
+  --cs-hero-ink: #2f2118;
 }
 .cs-shell[data-accent-tone="light"] .topnav.is-dark .topnav__cta {
-  background: #432d72;
+  background: #2f2118;
   color: #fff;
 }
 .cs-shell[data-accent-tone="light"] .topnav.is-dark .topnav__cta:hover {
-  background: color-mix(in srgb, #432d72 88%, black);
+  background: color-mix(in srgb, #2f2118 88%, black);
 }
 .cs-hero__inner {
   position: relative;
@@ -3948,7 +3948,7 @@ html.fp-on body {
   color: #fff;
 }
 .cs-shell[data-accent-tone="light"] .cs-side-nav__logo {
-  color: #432d72;
+  color: #2f2118;
 }
 .cs-side-nav__logo svg {
   height: 36px;
@@ -4054,7 +4054,7 @@ html.fp-on body {
   text-transform: uppercase;
 }
 .cs-shell[data-accent-tone="light"] .cs-eyebrow-pill--brand {
-  color: rgba(67, 45, 114, 0.55);
+  color: rgba(47, 33, 24, 0.55);
 }
 
 .cs-glance {
