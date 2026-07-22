@@ -53,14 +53,30 @@ export function CaseStudyHero({ study }: CaseStudyHeroProps) {
           <div className="cs-hero__row cs-hero__row--split">
             <div className="cs-hero__cell cs-hero__cell--visual">
               <div
-                className={`cs-hero__visual${study.heroImage ? " cs-hero__visual--image" : ""}`}
+                className={`cs-hero__visual${
+                  study.heroImage?.src
+                    ? " cs-hero__visual--image"
+                    : study.heroImage
+                      ? " cs-hero__visual--placeholder"
+                      : ""
+                }`}
               >
-                {study.heroImage ? (
+                {study.heroImage?.src ? (
                   <img
                     className="cs-hero__visual-img"
-                    src={withBasePath(study.heroImage.src!)}
+                    src={withBasePath(study.heroImage.src)}
                     alt={study.heroImage.alt}
                   />
+                ) : study.heroImage ? (
+                  <div
+                    className="cs-visual__placeholder cs-hero__placeholder"
+                    aria-label={study.heroImage.alt}
+                  >
+                    <span className="cs-visual__placeholder-label">Visual asset</span>
+                    <span className="cs-visual__placeholder-alt">
+                      {study.heroImage.alt}
+                    </span>
+                  </div>
                 ) : (
                   <div className={`cs-hero__logo cs-company-logo ${markClass}`}>
                     <Logo />

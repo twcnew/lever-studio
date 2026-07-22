@@ -29,7 +29,7 @@ export const HERO_LOGO_ENTRIES: HeroLogoEntry[] = [
     caseStudyHref: "/use-cases/swan",
     testimonial: {
       quote:
-        "Fully automated lead routing — **AEs only see hot leads**, prospects contacted in minutes.",
+        "Inbound triage automated — **~5 people’s worth of work** in one system, hot leads only.",
       author: "Bastien Roche",
       role: "Senior RevOps",
       initials: "BR",
