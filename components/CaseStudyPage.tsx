@@ -158,7 +158,6 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                         <AnnotatedText text={paragraph} />
                       </p>
                     ))}
-                    <CaseStudyQuoteBlock quote={study.featuredQuote} />
                     {study.impactHighlights.length > 0 && (
                       <div className="cs-highlights">
                         <h3 className="cs-highlights__title">Impact highlights</h3>
