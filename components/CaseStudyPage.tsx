@@ -3,7 +3,6 @@ import type { CSSProperties } from "react";
 import {
   CaseStudyEyebrow,
   CaseStudyEyebrowPill,
-  CaseStudyImpactStats,
   CaseStudyQuoteBlock,
   ProseSection,
 } from "./CaseStudyBlocks";
@@ -206,9 +205,6 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                       {paragraph}
                     </p>
                   ))}
-                  {study.impact.metrics && study.impact.metrics.length > 0 && (
-                    <CaseStudyImpactStats metrics={study.impact.metrics} />
-                  )}
                   {study.impact.quote && (
                     <CaseStudyQuoteBlock quote={study.impact.quote} />
                   )}
