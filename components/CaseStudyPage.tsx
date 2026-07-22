@@ -134,13 +134,6 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
       <CaseStudyHero study={study} />
 
       <div className="cs-body cs-body--sheet">
-        <div className="cs-shell__lines" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-          <i />
-        </div>
-
         <div className="cs-container">
           <div className="cs-page-layout">
             <CaseStudySideNav study={study} navItems={navItems} />

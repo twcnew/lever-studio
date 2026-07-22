@@ -12,13 +12,6 @@ export function UseCasesPage() {
 
   return (
     <div className="cs-shell">
-      <div className="cs-shell__lines" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
-      </div>
-
       <TopNav />
       <Drawer />
       <UseCasesNavTheme />
