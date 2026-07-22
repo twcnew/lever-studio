@@ -4005,7 +4005,8 @@ html.fp-on body {
 .cs-body > .cs-cta,
 .cs-body > .cs-related,
 .cs-body > .cs-related-proof,
-.cs-body > .lp-module.cs-related-proof {
+.cs-body > .lp-module.cs-related-proof,
+.cs-body > .cs-closing-band {
   position: relative;
   z-index: 1;
 }
@@ -4415,6 +4416,13 @@ html.fp-on body {
   margin-top: clamp(56px, 7vw, 80px);
   padding-top: clamp(40px, 5vw, 56px);
   border-top: 1px solid var(--hairline);
+}
+.cs-body .cs-closing-band {
+  margin-top: clamp(40px, 5vw, 64px);
+  position: relative;
+}
+.cs-body .cs-closing-band .lp-module--closing {
+  margin-top: 0;
 }
 .cs-related__title {
   margin: 0 0 10px;

@@ -2,7 +2,8 @@ import Link from "next/link";
 import { CASE_STUDIES, CASE_STUDY_LOGOS } from "@/lib/caseStudies";
 import { CaseStudyIndexCard } from "./CaseStudyIndexCard";
 import { Drawer, TopNav } from "./Chrome";
-import { DoubleArrows } from "./icons";
+import { SiteFooter } from "./lp/SiteFooter";
+import { ClosingSection } from "./sections/ClosingSection";
 import { CustomersWallOfLove } from "./UseCasesIndexSections";
 import { UseCasesNavTheme } from "./UseCasesNavTheme";
 
@@ -67,26 +68,10 @@ export function UseCasesPage() {
 
         <CustomersWallOfLove />
 
-        <section className="cs-cta">
-          <span className="eyebrow">
-            <span className="sq" />
-            YOUR USE CASE
-          </span>
-          <h2 className="cs-cta__title">
-            Your situation is unique.
-            <br />
-            <em>Your GTM should be too.</em>
-          </h2>
-          <p className="cs-cta__sub">
-            I build the system underneath your revenue — signals, data, and plays
-            wired into your own tools, scoped to your market, not borrowed
-            playbooks. The build costs a fraction of one SDR hire, and you keep it.
-          </p>
-          <Link className="btn btn-solid cs-cta__btn" href="/">
-            Book a Strategy Call
-            <DoubleArrows />
-          </Link>
-        </section>
+        <div className="lp lp--clay cs-closing-band">
+          <ClosingSection />
+          <SiteFooter />
+        </div>
       </div>
     </div>
   );
