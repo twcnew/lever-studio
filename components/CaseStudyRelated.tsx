@@ -1,5 +1,5 @@
-import { CaseStudyCard } from "./CaseStudyCard";
-import { getRelatedCaseStudies } from "@/lib/caseStudies";
+import { ProofCard } from "./system/ProofCard";
+import { buildProofShowcaseItems } from "@/lib/proofShowcase";
 import type { CaseStudy } from "@/lib/caseStudies/types";
 
 type CaseStudyRelatedProps = {
@@ -7,7 +7,10 @@ type CaseStudyRelatedProps = {
 };
 
 export function CaseStudyRelated({ study }: CaseStudyRelatedProps) {
-  const related = getRelatedCaseStudies(study);
+  const allProof = buildProofShowcaseItems();
+  const related = study.relatedSlugs
+    .map((slug) => allProof.find((item) => item.slug === slug))
+    .filter((item): item is NonNullable<typeof item> => item !== undefined);
 
   if (related.length === 0) {
     return null;
@@ -24,7 +27,7 @@ export function CaseStudyRelated({ study }: CaseStudyRelatedProps) {
       </p>
       <div className="cs-related__grid">
         {related.map((item) => (
-          <CaseStudyCard study={item} variant="related" key={item.slug} />
+          <ProofCard item={item} key={item.slug} />
         ))}
       </div>
     </section>

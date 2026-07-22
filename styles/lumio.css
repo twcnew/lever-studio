@@ -4427,6 +4427,11 @@ html.fp-on body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
+.cs-related__grid .proof-board__cell {
+  flex: none;
+  width: 100%;
+  max-width: none;
+}
 
 /* Shared case study cards (index + related) */
 .cs-card {
