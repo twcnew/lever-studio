@@ -4,7 +4,6 @@ import {
   AnnotatedTitle,
   CaseStudyEyebrow,
   CaseStudyEyebrowPill,
-  CaseStudyQuoteBlock,
   ProseSection,
 } from "./CaseStudyBlocks";
 import { CaseStudyRelated } from "./CaseStudyRelated";
@@ -119,7 +118,6 @@ function UseCaseSection({ useCase }: { useCase: CaseStudyUseCase }) {
             ))}
           </ul>
         )}
-        {useCase.quote && <CaseStudyQuoteBlock quote={useCase.quote} />}
       </div>
     </section>
   );
