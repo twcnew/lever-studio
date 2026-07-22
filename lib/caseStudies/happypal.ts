@@ -53,14 +53,15 @@ export const happypalCaseStudy: CaseStudy = {
     "From kickoff to delivery, the collaboration was **seamless and the work was impeccable** — I'd recommend them without hesitation.",
   proofMetric: { value: "10+", label: "qualified meetings / week" },
   impactHighlights: [
-    "Enterprise CSE meetings at Netflix, Carrefour, BNP Paribas, L'Oréal, and Orange",
-    "10+ qualified meetings booked every week across BDRs and AEs",
-    "41% response rate on the automated HR & Sales referral channel, 8 to 12× cold email",
-    "Full sales team fed with call-ready CSE leads, zero manual prospecting",
-    "Domain → enriched contact → live campaign in under 2 minutes",
+    "Enterprise CSE meetings at **Netflix, Carrefour, BNP Paribas, L'Oréal, and Orange**",
+    "**10+** qualified meetings booked every week across BDRs and AEs",
+    "**41%** response rate on the automated HR & Sales referral channel, 8 to 12× cold email",
+    "Full sales team fed with call-ready CSE leads, **zero manual prospecting**",
+    "Domain → enriched contact → live campaign in **under 2 minutes**",
   ],
   problem: {
     title: "The problem",
+    titleAccent: "problem",
     body: [
       "HappyPal's ICP, CSE elected officials, doesn't appear in any standard B2B database. \"Élu CSE\" isn't a LinkedIn title, isn't a full-time role, and isn't a firmographic filter you can buy. Professional emails for elected officials are often personal addresses or simply unreachable through classic enrichment tools.",
       "The sales team was operating artisanally: manual research, word of mouth, cold calls to company switchboards asking \"who manages the CSE?\" It worked, but it didn't scale. Reps spent more time finding the right contact than actually selling.",
@@ -68,6 +69,7 @@ export const happypalCaseStudy: CaseStudy = {
   },
   solution: {
     title: "The solution",
+    titleAccent: "solution",
     body: [
       "We attacked the identification problem on four fronts simultaneously, each designed to solve one facet of finding a buyer who doesn't exist in any database.",
       "Competitive market mapping gave the team a head start with thousands of pre-qualified CSE contacts. An AI workflow turned a single domain input into a verified CSE contact. Proprietary email pattern generation created deliverable addresses that no enrichment vendor had. And an automated referral channel reached HR and Sales staff who always know who runs the CSE.",
@@ -79,6 +81,7 @@ export const happypalCaseStudy: CaseStudy = {
     {
       number: "01",
       title: "Mapping the active CSE market",
+      titleAccent: "CSE market",
       navLabel: "Market mapping",
       body: [
         "Before building the detection engine, we mapped the active market. Several competitor platforms had exposed endpoints: publicly accessible directories and APIs without proper authentication. We extracted their full client bases: CSE names, elected officials, company names, and committee sizes.",
@@ -97,6 +100,7 @@ export const happypalCaseStudy: CaseStudy = {
     {
       number: "02",
       title: "One domain in, one CSE contact out",
+      titleAccent: "CSE contact out",
       navLabel: "Domain → CSE contact",
       body: [
         "The core workflow: the commercial team enters a single company domain. AI agents take over from there, analyzing the company website and social pages for CSE mentions, scraping search results for names linked to the works council, cross-referencing LinkedIn to identify the most likely profile, and enriching the contact.",
@@ -115,6 +119,7 @@ export const happypalCaseStudy: CaseStudy = {
     {
       number: "03",
       title: "Proprietary email generation at scale",
+      titleAccent: "at scale",
       navLabel: "Email generation",
       body: [
         "When classic enrichment tools can't find an elected official's email, which happens in the majority of cases, we don't stop. We built a pattern-matching system that analyzes the target company's email format (firstname.lastname@, f.lastname@, firstname@, etc.), generates every possible combination for the identified contact, and runs bulk SMTP verification to determine which address is valid.",
@@ -127,6 +132,7 @@ export const happypalCaseStudy: CaseStudy = {
     {
       number: "04",
       title: "Automated referral via HR & Sales",
+      titleAccent: "HR & Sales",
       navLabel: "Referral channel",
       body: [
         "Rather than hunting the CSE elected official directly, we contact the people inside the company who always know who it is: HR and Sales staff.",
@@ -145,6 +151,7 @@ export const happypalCaseStudy: CaseStudy = {
   ],
   impact: {
     title: "How HappyPal turned an impossible market into enterprise pipeline",
+    titleAccent: "enterprise pipeline",
     body: [
       "HappyPal needed enterprise CSE meetings at companies like Netflix, Carrefour, BNP Paribas, L'Oréal, and Orange. The pipeline now books 10+ qualified meetings every week, feeding every BDR and AE without manual prospecting.",
       "At HappyPal, the problem was upstream: the ICP didn't exist anywhere. Every CSE elected official identified by the system is data that didn't exist before, not in Apollo, not in LinkedIn, not in ZoomInfo. This is data creation, not enrichment.",

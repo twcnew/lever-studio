@@ -1,5 +1,9 @@
+"use client";
+
+import type { ReactNode } from "react";
 import type { CaseStudyMetric, CaseStudyQuote } from "@/lib/caseStudies/types";
 import { withBasePath } from "@/lib/basePath";
+import { InkAnnotate } from "./system/InkAnnotate";
 
 function CaseStudyEyebrowPill({
   label,
@@ -24,6 +28,54 @@ function CaseStudyEyebrow({ label }: { label: string }) {
       {label}
     </span>
   );
+}
+
+function AnnotatedTitle({
+  title,
+  accent,
+}: {
+  title: string;
+  accent?: string;
+}) {
+  if (!accent || !title.includes(accent)) {
+    return <span className="cs-section__title-main">{title}</span>;
+  }
+
+  const index = title.indexOf(accent);
+  return (
+    <span className="cs-section__title-main">
+      {title.slice(0, index)}
+      <InkAnnotate variant="underline">{accent}</InkAnnotate>
+      {title.slice(index + accent.length)}
+    </span>
+  );
+}
+
+/** Renders `**accent**` markers inside highlight / body strings with InkAnnotate. */
+function AnnotatedText({ text }: { text: string }) {
+  const parts: ReactNode[] = [];
+  const pattern = /\*\*(.+?)\*\*/g;
+  let last = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) {
+      parts.push(text.slice(last, match.index));
+    }
+    parts.push(
+      <InkAnnotate variant="underline" key={key++}>
+        {match[1]}
+      </InkAnnotate>,
+    );
+    last = match.index + match[0].length;
+  }
+
+  if (last < text.length) {
+    parts.push(text.slice(last));
+  }
+
+  return <>{parts.length > 0 ? parts : text}</>;
 }
 
 function CaseStudyQuoteBlock({ quote }: { quote: CaseStudyQuote }) {
@@ -74,22 +126,24 @@ function ProseSection({
   id,
   eyebrowLabel,
   title,
+  titleAccent,
   body,
 }: {
   id: string;
   eyebrowLabel?: string;
   title: string;
+  titleAccent?: string;
   body: string[];
 }) {
   return (
     <section className="cs-section cs-prose" id={id}>
       {eyebrowLabel && <CaseStudyEyebrow label={eyebrowLabel} />}
       <h2 className="cs-section__title">
-        <span className="cs-section__title-main">{title}</span>
+        <AnnotatedTitle title={title} accent={titleAccent} />
       </h2>
       {body.map((paragraph, index) => (
         <p className="cs-section__body" key={index}>
-          {paragraph}
+          <AnnotatedText text={paragraph} />
         </p>
       ))}
     </section>
@@ -97,6 +151,8 @@ function ProseSection({
 }
 
 export {
+  AnnotatedText,
+  AnnotatedTitle,
   CaseStudyEyebrow,
   CaseStudyEyebrowPill,
   CaseStudyImpactStats,

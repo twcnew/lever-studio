@@ -61,20 +61,22 @@ export function CaseStudyRelated({ study }: CaseStudyRelatedProps) {
   const { label, title, titleAccent, sub, cta } = PROOF_CONTENT;
 
   return (
-    <LpModule
-      id="related-proof"
-      className="lp-module--proof cs-related-proof"
-      label={label}
-      title={title}
-      titleAccent={titleAccent ? annotatedTitleAccent(titleAccent) : undefined}
-      sub={sub ? annotatedSub(sub) : undefined}
-    >
-      <ProofShowcase excludeSlug={study.slug} />
-      {cta && (
-        <div className="proof-ink-cta">
-          <InkCta href={cta.href}>{cta.label}</InkCta>
-        </div>
-      )}
-    </LpModule>
+    <div className="lp lp--clay cs-related-band">
+      <LpModule
+        id="related-proof"
+        className="lp-module--proof cs-related-proof"
+        label={label}
+        title={title}
+        titleAccent={titleAccent ? annotatedTitleAccent(titleAccent) : undefined}
+        sub={sub ? annotatedSub(sub) : undefined}
+      >
+        <ProofShowcase excludeSlug={study.slug} />
+        {cta && (
+          <div className="proof-ink-cta">
+            <InkCta href={cta.href}>{cta.label}</InkCta>
+          </div>
+        )}
+      </LpModule>
+    </div>
   );
 }

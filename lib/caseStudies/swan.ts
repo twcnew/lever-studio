@@ -47,17 +47,18 @@ export const swanCaseStudy: CaseStudy = {
     "No BDR desk on inbound. About **~5 people of triage** in the system. Plus board-ready market sizing and agents that keep running.",
   proofMetric: { value: "~5", label: "people of triage automated" },
   impactHighlights: [
-    "Inbound: ~17h → under 10 min on hot leads; SLA under 2h hit ~99% after launch",
-    "Sample run: 240 leads in, 38 routed (noise filtered before AEs)",
-    "~1,700 new TAP contacts across 335 companies",
-    "1,481 FI companies sized for board reporting across 4 segments",
-    "49 Compliance-validated health accounts added to TAP",
-    "Forecast agent recovers ~8h/week of senior time; still runs without a RevOps hire",
-    "~37k wasted enrichment credits/month stopped",
-    "Full CRM audit on ~40k records: 2–3 days → ~1h30 with Claude Code",
+    "Inbound: **~17h → under 10 min** on hot leads; SLA under 2h hit ~99% after launch",
+    "Sample run: **240 leads in, 38 routed** (noise filtered before AEs)",
+    "**~1,700** new TAP contacts across 335 companies",
+    "**1,481** FI companies sized for board reporting across 4 segments",
+    "**49** Compliance-validated health accounts added to TAP",
+    "Forecast agent recovers **~8h/week** of senior time; still runs without a RevOps hire",
+    "**~37k** wasted enrichment credits/month stopped",
+    "Full CRM audit on ~40k records: **2–3 days → ~1h30** with Claude Code",
   ],
   problem: {
     title: "The problem",
+    titleAccent: "problem",
     body: [
       "Inbound triage sat on people. The CRM had duplication, missing firmographics, and TAP accounts without the right contacts. Forecasting was a weekly manual pile. Leadership had no defensible FI account universe for board reporting.",
       "I needed systems that qualify and route leads, give AEs usable coverage, produce board-grade lists, and keep running after I left.",
@@ -65,6 +66,7 @@ export const swanCaseStudy: CaseStudy = {
   },
   solution: {
     title: "The solution",
+    titleAccent: "solution",
     body: [
       "I built the inbound qualify-and-route flow first: score every lead, four buckets, Slack for hot ones, nurture or decline for the rest, docs so someone else can own it.",
       "In parallel I cleaned and enriched CRM/TAP data, built FI and health account universes for Marketing and Sales, shipped a monthly forecast agent, and cut dead automation spend while speeding RevOps work with coding tools the team adopted.",
@@ -74,16 +76,17 @@ export const swanCaseStudy: CaseStudy = {
     {
       number: "01",
       title: "Inbound routing that doesn’t need a BDR queue",
+      titleAccent: "BDR queue",
       navLabel: "Inbound routing",
       body: [
         "Talk to an Expert meant a human read every submission. When that stopped working, first contact blew out to ~17 hours and AEs saw everything.",
         "I built the qualify-and-route flow and put it in production: scoring, four buckets, Slack alerts, nurture, decline, plus a maintenance guide. When a few leads slipped, I added a light human check for non-TAP. TAP stays fully automatic.",
-        "Roughly five people’s triage work sits in that system. Top leads move in under 10 minutes. Manual BDR review is near zero. Post-launch, the under-2h SLA held ~99% of the time.",
+        "Roughly five people’s triage work sits in that system. Top leads move in under **10 minutes**. Manual BDR review is near zero. Post-launch, the under-2h SLA held **~99%** of the time.",
       ],
       bullets: [
-        "17h → under 10 minutes on hot inbound",
-        "SLA under 2h hit ~99% after launch",
-        "Sample: 240 in → 38 routed across four buckets",
+        "**17h → under 10 minutes** on hot inbound",
+        "SLA under 2h hit **~99%** after launch",
+        "Sample: **240 in → 38 routed** across four buckets",
       ],
       visual: {
         alt: "BRIEF: Clean 4-bucket diagram — hot → AE Slack + booking / nurture / decline / silent log. Light background, accent #D5C9ED.",
@@ -93,6 +96,7 @@ export const swanCaseStudy: CaseStudy = {
     {
       number: "02",
       title: "CRM hygiene and TAP contacts AEs can use",
+      titleAccent: "AEs can use",
       navLabel: "CRM & TAP",
       body: [
         "HubSpot had real debt: heavy duplication, missing industry data, ownership gaps. Priority TAP accounts were on the list; the people AEs needed often weren’t.",
@@ -112,6 +116,7 @@ export const swanCaseStudy: CaseStudy = {
     {
       number: "03",
       title: "FI market sizing leadership could take to the board",
+      titleAccent: "to the board",
       navLabel: "FI market sizing",
       body: [
         "Marketing needed a board-ready count for Financial Institutions. An early list was judged not exhaustive enough. No consolidated universe existed across neobanks, lending, insurance card issuers, and legacy/foreign banks.",
@@ -131,6 +136,7 @@ export const swanCaseStudy: CaseStudy = {
     {
       number: "04",
       title: "Health vertical launch list Sales and Compliance could trust",
+      titleAccent: "could trust",
       navLabel: "Health vertical",
       body: [
         "Swan was opening a new segment: health insurance / mutuelles advance cards in France. Sales had no account data or domain knowledge. Compliance had eligibility rules that had to stick.",
@@ -150,6 +156,7 @@ export const swanCaseStudy: CaseStudy = {
     {
       number: "05",
       title: "A forecast brief that writes itself",
+      titleAccent: "writes itself",
       navLabel: "Forecast agent",
       body: [
         "Weekly forecasting was a manual pile of CRM pulls. Accuracy floated around 65–70%, and shaky deals got noticed late.",
@@ -174,6 +181,7 @@ export const swanCaseStudy: CaseStudy = {
     {
       number: "06",
       title: "Cut wasted spend and speed up RevOps work",
+      titleAccent: "RevOps work",
       navLabel: "Ops leverage",
       body: [
         "The GTM automation stack had grown organically. Legacy flows nobody tracked were still burning enrichment credits every month.",
@@ -193,6 +201,7 @@ export const swanCaseStudy: CaseStudy = {
   ],
   impact: {
     title: "Impact",
+    titleAccent: "Impact",
     body: [
       "Inbound doesn’t wait on a triage desk. Hot leads reach AEs in minutes, with noise filtered before it hits Slack.",
       "Sales has TAP coverage and champion lists. Leadership has a board-ready FI universe and a Compliance-safe health launch list.",

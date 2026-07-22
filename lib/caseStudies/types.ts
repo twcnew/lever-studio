@@ -23,6 +23,8 @@ export type CaseStudyVisual = {
 export type CaseStudyUseCase = {
   number: string;
   title: string;
+  /** Substring of title wrapped with InkAnnotate underline. */
+  titleAccent?: string;
   navLabel?: string;
   body: string[];
   quote?: CaseStudyQuote;
@@ -58,11 +60,12 @@ export type CaseStudy = {
   /** Markdown-capable quote for hero logo popover (**bold**). */
   heroPopoverQuote?: string;
   impactHighlights: string[];
-  problem: { title: string; body: string[] };
-  solution: { title: string; body: string[] };
+  problem: { title: string; titleAccent?: string; body: string[] };
+  solution: { title: string; titleAccent?: string; body: string[] };
   useCases: CaseStudyUseCase[];
   impact: {
     title: string;
+    titleAccent?: string;
     body: string[];
     quote?: CaseStudyQuote;
     metrics?: CaseStudyMetric[];

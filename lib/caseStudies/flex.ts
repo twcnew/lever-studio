@@ -39,6 +39,7 @@ export const flexCaseStudy: CaseStudy = {
   ],
   problem: {
     title: "The problem",
+    titleAccent: "problem",
     body: [
       "[TODO: STAR Task/Challenge — Generic GTM playbooks failed for complex technical product and long sales cycles.]",
       "[TODO: Specific gaps — persona clarity, demo pipeline, or outbound relevance.]",
@@ -46,6 +47,7 @@ export const flexCaseStudy: CaseStudy = {
   },
   solution: {
     title: "The solution",
+    titleAccent: "solution",
     body: [
       "[TODO: STAR Action overview — Custom GTM system for technical buyers: research, messaging, sequences.]",
       "[TODO: How experimentation was built into the motion.]",
@@ -86,6 +88,7 @@ export const flexCaseStudy: CaseStudy = {
   ],
   impact: {
     title: "Impact",
+    titleAccent: "Impact",
     body: [
       "[TODO: STAR Result — Meeting quality, pipeline velocity, or win rate changes.]",
       "[TODO: What FlexAI's GTM team runs independently now.]",

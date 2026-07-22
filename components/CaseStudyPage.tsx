@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 import {
+  AnnotatedText,
+  AnnotatedTitle,
   CaseStudyEyebrow,
   CaseStudyEyebrowPill,
   CaseStudyQuoteBlock,
@@ -93,21 +95,27 @@ function UseCaseSection({ useCase }: { useCase: CaseStudyUseCase }) {
       <div className="cs-prose">
         <CaseStudyEyebrow label={`Use case ${useCase.number}`} />
         <h2 className="cs-section__title">
-          <span className="cs-section__title-main">{useCase.title}</span>
+          <AnnotatedTitle title={useCase.title} accent={useCase.titleAccent} />
         </h2>
-        {lead && <p className="cs-section__body">{lead}</p>}
+        {lead && (
+          <p className="cs-section__body">
+            <AnnotatedText text={lead} />
+          </p>
+        )}
       </div>
       {useCase.visual && <CaseStudyVisualSlot visual={useCase.visual} />}
       <div className="cs-prose">
         {rest.map((paragraph, index) => (
           <p className="cs-section__body" key={index}>
-            {paragraph}
+            <AnnotatedText text={paragraph} />
           </p>
         ))}
         {useCase.bullets && useCase.bullets.length > 0 && (
           <ul className="cs-bullets">
             {useCase.bullets.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}>
+                <AnnotatedText text={item} />
+              </li>
             ))}
           </ul>
         )}
@@ -136,8 +144,6 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
       <div className="cs-body cs-body--sheet">
         <div className="cs-container">
           <div className="cs-page-layout">
-            <CaseStudySideNav study={study} navItems={navItems} />
-
             <div className="cs-main">
               <section className="cs-glance" id="at-a-glance">
                 <CaseStudyEyebrowPill label="At a glance" variant="brand" />
@@ -151,7 +157,7 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                   <div className="cs-glance__prose cs-prose">
                     {study.intro.map((paragraph, index) => (
                       <p className="cs-glance__body" key={index}>
-                        {paragraph}
+                        <AnnotatedText text={paragraph} />
                       </p>
                     ))}
                     <CaseStudyQuoteBlock quote={study.featuredQuote} />
@@ -160,7 +166,9 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                         <h3 className="cs-highlights__title">Impact highlights</h3>
                         <ul className="cs-highlights__list">
                           {study.impactHighlights.map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index}>
+                              <AnnotatedText text={item} />
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -174,6 +182,7 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                   id="problem"
                   eyebrowLabel="The problem"
                   title={study.problem.title}
+                  titleAccent={study.problem.titleAccent}
                   body={study.problem.body}
                 />
 
@@ -181,6 +190,7 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                   id="solution"
                   eyebrowLabel="The solution"
                   title={study.solution.title}
+                  titleAccent={study.solution.titleAccent}
                   body={study.solution.body}
                 />
 
@@ -191,21 +201,26 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
                 <section className="cs-section cs-prose" id="impact">
                   <CaseStudyEyebrow label="Results" />
                   <h2 className="cs-section__title">
-                    <span className="cs-section__title-main">{study.impact.title}</span>
+                    <AnnotatedTitle
+                      title={study.impact.title}
+                      accent={study.impact.titleAccent}
+                    />
                   </h2>
                   {study.impact.body.map((paragraph, index) => (
                     <p className="cs-section__body" key={index}>
-                      {paragraph}
+                      <AnnotatedText text={paragraph} />
                     </p>
                   ))}
                 </section>
               </div>
             </div>
+
+            <CaseStudySideNav study={study} navItems={navItems} />
           </div>
         </div>
-
-        <CaseStudyRelated study={study} />
       </div>
+
+      <CaseStudyRelated study={study} />
 
       <div className="lp lp--clay cs-closing-band">
         <ClosingSection />
