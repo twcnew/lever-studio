@@ -115,7 +115,7 @@ export const swanCaseStudy: CaseStudy = {
         "Champion lists for 10+ named accounts on demand",
       ],
       visual: {
-        src: "/case-studies/swan-use-case-02-persona-map.jpg",
+        src: "/case-studies/swan-use-case-02-persona-map.jpg?v=2",
         alt: "Hand-drawn anonymized persona map linking Product, C-level, GTM, and Tech contact cards.",
         caption: "TAP persona coverage",
       },
