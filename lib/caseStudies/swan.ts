@@ -136,7 +136,8 @@ export const swanCaseStudy: CaseStudy = {
         "Built for board / market-sizing reporting",
       ],
       visual: {
-        alt: "BRIEF: Clean four-segment market-sizing diagram or table mock (Neobanks / Lending / Insurance / Legacy banks) with 1,481 total. Accent #D5C9ED. No confidential partner names.",
+        src: "/case-studies/swan-use-case-03-fi-sizing.jpg",
+        alt: "Hand-drawn FI market sizing: EBA, CRM, and web research cross-checked into 1,481 companies across Neobanks, Lending, Insurance, and Legacy banks.",
         caption: "FI market sizing for the board",
       },
     },
