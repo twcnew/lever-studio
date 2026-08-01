@@ -157,7 +157,8 @@ export const swanCaseStudy: CaseStudy = {
         "Guest-list enrichment for healthcare VIP events",
       ],
       visual: {
-        alt: "BRIEF: Soft vertical-launch visual — anonymized account list or knowledge-base index for health/mutuelles. Accent #D5C9ED. No real insurer logos required.",
+        src: "/case-studies/swan-use-case-04-health.jpg",
+        alt: "Hand-drawn Health / Mutuelles target-account folder with knowledge, accounts, and rules tabs — Compliance validated, 49 companies to TAP.",
         caption: "Health vertical account universe",
       },
     },
