@@ -178,7 +178,8 @@ export const swanCaseStudy: CaseStudy = {
         "Built to keep running without me",
       ],
       visual: {
-        alt: "BRIEF: Notion forecast screenshot with TL;DR visible — blur € figures and AE names if needed. Or a clean mock of the brief.",
+        src: "/case-studies/swan-use-case-05-forecast.jpg",
+        alt: "Hand-drawn monthly forecast brief with TL;DR, won/commit/best case panels, coverage bar, and ~8h/week saved.",
         caption: "Forecast agent brief",
       },
       quote: {
