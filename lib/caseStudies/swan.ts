@@ -115,7 +115,8 @@ export const swanCaseStudy: CaseStudy = {
         "Champion lists for 10+ named accounts on demand",
       ],
       visual: {
-        alt: "BRIEF: Anonymized persona map (Product / C-level / GTM / Tech) or cleaned HubSpot-style contact cards. No real personal data.",
+        src: "/case-studies/swan-use-case-02-persona-map.jpg",
+        alt: "Hand-drawn anonymized persona map linking Product, C-level, GTM, and Tech contact cards.",
         caption: "TAP persona coverage",
       },
     },
