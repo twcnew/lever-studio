@@ -94,7 +94,8 @@ export const swanCaseStudy: CaseStudy = {
         "Sample: **240 in → 38 routed** across four buckets",
       ],
       visual: {
-        alt: "BRIEF: Clean 4-bucket diagram — hot → AE Slack + booking / nurture / decline / silent log. Light background, accent #D5C9ED.",
+        src: "/case-studies/swan-use-case-01-buckets.jpg",
+        alt: "Hand-drawn four-bucket inbound routing: hot to AE Slack and booking, nurture, decline, silent log.",
         caption: "Four-bucket inbound routing",
       },
     },
