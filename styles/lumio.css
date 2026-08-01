@@ -3650,18 +3650,18 @@ html.fp-on body {
   padding: calc(var(--cs-sticky-top) + 12px) var(--site-gutter)
     clamp(48px, 6vw, 64px);
 }
-/* Light brand washes (e.g. Swan peach #F8D5BE): dark warm ink for contrast */
+/* Light brand washes (e.g. Swan lavender #D5C9ED): dark ink for contrast */
 .cs-hero[data-accent-tone="light"] {
-  --cs-hero-grid-line: rgba(47, 33, 24, 0.16);
+  --cs-hero-grid-line: rgba(67, 45, 114, 0.16);
   --cs-hero-card: color-mix(in srgb, var(--cs-hero-accent) 55%, white);
-  --cs-hero-ink: #2f2118;
+  --cs-hero-ink: #432d72;
 }
 .cs-shell[data-accent-tone="light"] .topnav.is-dark .topnav__cta {
-  background: #2f2118;
+  background: #432d72;
   color: #fff;
 }
 .cs-shell[data-accent-tone="light"] .topnav.is-dark .topnav__cta:hover {
-  background: color-mix(in srgb, #2f2118 88%, black);
+  background: color-mix(in srgb, #432d72 88%, black);
 }
 .cs-hero__inner {
   position: relative;
@@ -3948,11 +3948,21 @@ html.fp-on body {
   color: #fff;
 }
 .cs-shell[data-accent-tone="light"] .cs-side-nav__logo {
-  color: #2f2118;
+  color: #432d72;
 }
 .cs-side-nav__logo svg {
   height: 36px;
   max-width: 120px;
+}
+.cs-side-nav__links {
+  display: block;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: #fff;
+  padding: 8px;
+  box-shadow:
+    0 0 0 5px color-mix(in srgb, var(--paper, #fffaf0) 92%, #fff),
+    0 10px 28px rgba(14, 10, 7, 0.045);
 }
 .cs-side-nav__list {
   list-style: none;
@@ -3961,7 +3971,7 @@ html.fp-on body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  max-height: calc(100vh - var(--cs-sticky-top) - 200px);
+  max-height: calc(100vh - var(--cs-sticky-top) - 240px);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
@@ -3971,21 +3981,26 @@ html.fp-on body {
   align-items: flex-start;
   gap: 10px;
   width: 100%;
-  padding: 8px 0;
+  padding: 9px 12px;
+  border-radius: 10px;
   text-align: left;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.02em;
-  color: var(--muted);
-  transition: color 0.15s ease;
+  color: rgba(14, 10, 7, 0.48);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
 }
 .cs-side-nav__link:hover {
   color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 3.5%, transparent);
 }
 .cs-side-nav__link.is-active {
   color: var(--ink);
   font-weight: 500;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
 }
 .cs-side-nav__dot {
   flex-shrink: 0;
@@ -3994,6 +4009,11 @@ html.fp-on body {
   margin-top: 6px;
   border-radius: 50%;
   background: var(--ink);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.cs-side-nav__dot.is-on {
+  opacity: 1;
 }
 
 .cs-body {
@@ -4054,7 +4074,7 @@ html.fp-on body {
   text-transform: uppercase;
 }
 .cs-shell[data-accent-tone="light"] .cs-eyebrow-pill--brand {
-  color: rgba(47, 33, 24, 0.55);
+  color: rgba(67, 45, 114, 0.55);
 }
 
 .cs-glance {
@@ -4996,15 +5016,22 @@ html.fp-on body {
   }
   .cs-side-nav__links {
     min-width: 0;
+    padding: 8px 10px;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--paper, #fffaf0) 92%, #fff);
   }
   .cs-side-nav__list {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px 16px;
+    gap: 4px;
+    max-height: none;
   }
   .cs-side-nav__link {
-    padding: 4px 0;
+    width: auto;
+    padding: 6px 10px;
     font-size: 12px;
+  }
+  .cs-side-nav__dot {
+    margin-top: 5px;
   }
   .cs-glance__split {
     grid-template-columns: 1fr;
