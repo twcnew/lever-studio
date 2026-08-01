@@ -204,7 +204,8 @@ export const swanCaseStudy: CaseStudy = {
         "First consolidated map of enrichment tooling",
       ],
       visual: {
-        alt: "BRIEF: Simple before/after ops visual — wasted credits stopped + audit time 2–3 days → 1h30. Accent #D5C9ED. No raw tool sprawl screenshots.",
+        src: "/case-studies/swan-use-case-06-ops.jpg",
+        alt: "Hand-drawn before/after table: enrichment credits stopped, CRM audit 2–3 days to ~1h30, tooling consolidated.",
         caption: "Ops leverage",
       },
     },
