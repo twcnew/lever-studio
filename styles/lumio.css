@@ -8098,10 +8098,25 @@ html.fp-on body {
 
 .use-cases-index {
   padding-block-start: clamp(72px, 12vh, 120px);
+  background: #fff;
+  min-height: 100vh;
 }
 
 .use-cases-index__intro {
   padding-block-end: clamp(40px, 8vh, 72px);
+}
+
+/* Kill the global cream `--canvas` on this route (shows above/around the nav). */
+html:has(.use-cases-index),
+html:has(.use-cases-index) body,
+html.use-cases-index-page,
+html.use-cases-index-page body {
+  background: #fff;
+}
+
+html:has(.use-cases-index) .use-cases-index .lp--clay,
+html.use-cases-index-page .use-cases-index .lp--clay {
+  background: #fff;
 }
 
 .proof-board__viewport {
