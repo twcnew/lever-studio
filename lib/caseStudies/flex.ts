@@ -97,7 +97,8 @@ export const flexCaseStudy: CaseStudy = {
         "Account lists Sales and RevOps could actually work",
       ],
       visual: {
-        alt: "BRIEF: Clean TAM funnel 80k → 25k with Tier 1 / 2 / 3 cards. Dark accent #002A9E. No raw Clay UI.",
+        src: "/case-studies/flex-use-case-01-tam.jpg",
+        alt: "Hand-drawn TAM funnel: ~80,000 global companies down to ~25,000 tiered ICP accounts across Tier 1, 2, and 3.",
         caption: "TAM to tiered ICP",
       },
     },
