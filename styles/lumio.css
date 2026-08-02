@@ -8075,6 +8075,7 @@ html.fp-on body {
 .proof-board--grid .proof-board__track {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
   gap: clamp(14px, 2vw, 20px);
   width: 100%;
   min-width: 0;
@@ -8084,8 +8085,15 @@ html.fp-on body {
 .proof-board--grid .proof-board__cell {
   width: 100%;
   max-width: none;
+  height: 100%;
   flex: none;
+  align-self: stretch;
   scroll-snap-align: unset;
+}
+
+/* Equal-height grid: grow the quote so attribution sits on a shared baseline */
+.proof-board--grid .proof-board__quote {
+  flex: 1 1 auto;
 }
 
 .use-cases-index {
