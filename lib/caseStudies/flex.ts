@@ -13,6 +13,10 @@ export const flexCaseStudy: CaseStudy = {
   brandColor: "#002A9E",
   heroHeadline:
     "How FlexAI books meetings with the ML teams that actually train models",
+  heroImage: {
+    src: "/case-studies/flex-hero.jpg",
+    alt: "FlexAI wordmark in textured blue paint on white.",
+  },
   heroMetrics: [
     {
       value: "12+",
