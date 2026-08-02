@@ -10,7 +10,7 @@ export const flexCaseStudy: CaseStudy = {
   websiteUrl: "https://flex.ai",
   industry: "AI infrastructure / GPU software",
   headquarters: "Paris, France",
-  brandColor: "#1a1a2e",
+  brandColor: "#002A9E",
   heroHeadline:
     "How FlexAI books meetings with the ML teams that actually train models",
   heroMetrics: [
@@ -89,7 +89,7 @@ export const flexCaseStudy: CaseStudy = {
         "Account lists Sales and RevOps could actually work",
       ],
       visual: {
-        alt: "BRIEF: Clean TAM funnel 80k → 25k with Tier 1 / 2 / 3 cards. Dark accent #1a1a2e. No raw Clay UI.",
+        alt: "BRIEF: Clean TAM funnel 80k → 25k with Tier 1 / 2 / 3 cards. Dark accent #002A9E. No raw Clay UI.",
         caption: "TAM to tiered ICP",
       },
     },
@@ -108,7 +108,7 @@ export const flexCaseStudy: CaseStudy = {
         "US → global always-on Lemlist campaigns",
       ],
       visual: {
-        alt: "BRIEF: Job-post → filter → enrich → Lemlist flow diagram. Accent #1a1a2e. No raw tool screenshots.",
+        alt: "BRIEF: Job-post → filter → enrich → Lemlist flow diagram. Accent #002A9E. No raw tool screenshots.",
         caption: "Always-on job posting engine",
       },
     },
@@ -127,7 +127,7 @@ export const flexCaseStudy: CaseStudy = {
         "Clay enrichment before outreach",
       ],
       visual: {
-        alt: "BRIEF: Sketch of GitHub signal → profile scrape → personalized opener. Accent #1a1a2e.",
+        alt: "BRIEF: Sketch of GitHub signal → profile scrape → personalized opener. Accent #002A9E.",
         caption: "Signal-based GitHub campaigns",
       },
     },
@@ -146,7 +146,7 @@ export const flexCaseStudy: CaseStudy = {
         "Feeds the same enrichment → Lemlist path",
       ],
       visual: {
-        alt: "BRIEF: Hugging Face org → model publish cadence → ICP queue. Accent #1a1a2e.",
+        alt: "BRIEF: Hugging Face org → model publish cadence → ICP queue. Accent #002A9E.",
         caption: "Model deployment tracking",
       },
     },
@@ -165,7 +165,7 @@ export const flexCaseStudy: CaseStudy = {
         "Openers tied to the exact post or competitor",
       ],
       visual: {
-        alt: "BRIEF: LinkedIn post → engagers list → pain-based sequence. Accent #1a1a2e. No real profile data.",
+        alt: "BRIEF: LinkedIn post → engagers list → pain-based sequence. Accent #002A9E. No real profile data.",
         caption: "Social listening & engagement targeting",
       },
     },
@@ -184,7 +184,7 @@ export const flexCaseStudy: CaseStudy = {
         "Online → booth conversion at Web Summit",
       ],
       visual: {
-        alt: "BRIEF: Dual panel — nurture sequence + event attendee → booth. Accent #1a1a2e.",
+        alt: "BRIEF: Dual panel — nurture sequence + event attendee → booth. Accent #002A9E.",
         caption: "Nurture and event outreach",
       },
     },
@@ -203,7 +203,7 @@ export const flexCaseStudy: CaseStudy = {
         "11x.ai layered on top of proven sequences",
       ],
       visual: {
-        alt: "BRIEF: Customer → lookalike graph + AI SDR capacity layer. Accent #1a1a2e.",
+        alt: "BRIEF: Customer → lookalike graph + AI SDR capacity layer. Accent #002A9E.",
         caption: "Lookalike and scale layer",
       },
     },
