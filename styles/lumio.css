@@ -9813,6 +9813,13 @@ html.fp-on body {
   padding-inline: 0.04em;
 }
 
+/* Title accent lines must share the same left edge as the line above
+   ("One pipeline." / "One owner.") — cancel horizontal circle pad. */
+.lp-module__title-accent .ink-annotate--circle {
+  padding-inline: 0;
+  margin-inline: 0;
+}
+
 .ink-annotate--circle.ink-annotate--reveal-hover {
   display: inline-block;
   vertical-align: baseline;
