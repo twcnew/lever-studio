@@ -137,7 +137,8 @@ export const flexCaseStudy: CaseStudy = {
         "Clay enrichment before outreach",
       ],
       visual: {
-        alt: "BRIEF: Sketch of GitHub signal → profile scrape → personalized opener. Accent #002A9E.",
+        src: "/case-studies/flex-use-case-03-github.jpg",
+        alt: "Hand-drawn flow: GitHub signal → profile scrape → personalized opener.",
         caption: "Signal-based GitHub campaigns",
       },
     },
