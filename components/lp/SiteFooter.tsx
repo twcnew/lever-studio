@@ -106,8 +106,6 @@ export function SiteFooter() {
                 ))}
               </nav>
               <p className="site-footer__copyright">&copy; {FOOTER_CONTENT.year}</p>
-              <p className="site-footer__credit-line">{FOOTER_CONTENT.credits.line1}</p>
-              <p className="site-footer__credit-line">{FOOTER_CONTENT.credits.line2}</p>
             </div>
           </div>
         </div>
