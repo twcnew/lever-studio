@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Drawer, TopNav } from "./Chrome";
 import { ClosingSection } from "./sections/ClosingSection";
 import { SiteFooter } from "./lp/SiteFooter";
@@ -37,7 +37,6 @@ function annotatedTitleAccent(titleAccent: string) {
 }
 
 export function UseCasesPage() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const { label, title, titleAccent, sub } = USE_CASES_INDEX_CONTENT;
 
   useEffect(() => {
@@ -51,8 +50,8 @@ export function UseCasesPage() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <TopNav onOpenDrawer={() => setDrawerOpen(true)} />
-      <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
+      <TopNav />
+      <Drawer />
 
       <main id="main" className="use-cases-index">
         <div className="lp lp--clay">
