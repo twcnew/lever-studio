@@ -17,6 +17,10 @@ export const flexCaseStudy: CaseStudy = {
     src: "/case-studies/flex-hero.jpg",
     alt: "FlexAI wordmark in textured blue paint on white.",
   },
+  sideNavImage: {
+    src: "/case-studies/flex-side-nav.jpg",
+    alt: "FlexAI F mark in textured blue paint on white.",
+  },
   heroMetrics: [
     {
       value: "12+",
