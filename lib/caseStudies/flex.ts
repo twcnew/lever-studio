@@ -117,7 +117,8 @@ export const flexCaseStudy: CaseStudy = {
         "US → global always-on Lemlist campaigns",
       ],
       visual: {
-        alt: "BRIEF: Job-post → filter → enrich → Lemlist flow diagram. Accent #002A9E. No raw tool screenshots.",
+        src: "/case-studies/flex-use-case-02-jobs.jpg",
+        alt: "Hand-drawn flow: job post → filter → enrich → Lemlist campaign.",
         caption: "Always-on job posting engine",
       },
     },
