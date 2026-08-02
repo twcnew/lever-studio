@@ -47,9 +47,6 @@ export function UseCasesPage() {
   return (
     <>
       <UseCasesNavTheme />
-      <a className="skip" href="#main">
-        Skip to content
-      </a>
       <TopNav />
       <Drawer />
 
