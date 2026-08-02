@@ -8061,6 +8061,41 @@ html.fp-on body {
   position: relative;
 }
 
+/* Index /use-cases: 3 cards in a responsive grid, no carousel chrome */
+.proof-board--grid .proof-board__viewport {
+  overflow: visible;
+  scroll-snap-type: none;
+}
+
+.proof-board--grid .proof-board__viewport::before,
+.proof-board--grid .proof-board__viewport::after {
+  display: none;
+}
+
+.proof-board--grid .proof-board__track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(14px, 2vw, 20px);
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 0;
+}
+
+.proof-board--grid .proof-board__cell {
+  width: 100%;
+  max-width: none;
+  flex: none;
+  scroll-snap-align: unset;
+}
+
+.use-cases-index {
+  padding-block-start: clamp(72px, 12vh, 120px);
+}
+
+.use-cases-index__intro {
+  padding-block-end: clamp(40px, 8vh, 72px);
+}
+
 .proof-board__viewport {
   position: relative;
   container-type: inline-size;

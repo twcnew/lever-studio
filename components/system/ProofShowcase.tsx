@@ -6,9 +6,14 @@ import { ProofCard } from "./ProofCard";
 
 type ProofShowcaseProps = {
   excludeSlug?: string;
+  layout?: "carousel" | "grid";
 };
 
-export function ProofShowcase({ excludeSlug }: ProofShowcaseProps) {
+export function ProofShowcase({
+  excludeSlug,
+  layout = "carousel",
+}: ProofShowcaseProps) {
+  const isGrid = layout === "grid";
   const items = useMemo(() => {
     const all = buildProofShowcaseItems();
     return excludeSlug
@@ -21,14 +26,16 @@ export function ProofShowcase({ excludeSlug }: ProofShowcaseProps) {
   const [canNext, setCanNext] = useState(true);
 
   const updateNav = useCallback(() => {
+    if (isGrid) return;
     const viewport = viewportRef.current;
     if (!viewport) return;
     const maxScroll = viewport.scrollWidth - viewport.clientWidth;
     setCanPrev(viewport.scrollLeft > 4);
     setCanNext(viewport.scrollLeft < maxScroll - 4);
-  }, []);
+  }, [isGrid]);
 
   useEffect(() => {
+    if (isGrid) return;
     updateNav();
     const viewport = viewportRef.current;
     if (!viewport) return;
@@ -38,7 +45,7 @@ export function ProofShowcase({ excludeSlug }: ProofShowcaseProps) {
       viewport.removeEventListener("scroll", updateNav);
       window.removeEventListener("resize", updateNav);
     };
-  }, [updateNav, items.length]);
+  }, [updateNav, items.length, isGrid]);
 
   const scrollByCard = useCallback((direction: 1 | -1) => {
     const viewport = viewportRef.current;
@@ -53,7 +60,10 @@ export function ProofShowcase({ excludeSlug }: ProofShowcaseProps) {
   }
 
   return (
-    <figure className="proof-board" aria-label="Client case studies">
+    <figure
+      className={isGrid ? "proof-board proof-board--grid" : "proof-board"}
+      aria-label="Client case studies"
+    >
       <div className="proof-board__viewport" ref={viewportRef}>
         <div className="proof-board__track">
           {items.map((item) => (
@@ -61,24 +71,28 @@ export function ProofShowcase({ excludeSlug }: ProofShowcaseProps) {
           ))}
         </div>
       </div>
-      <button
-        type="button"
-        className="proof-board__nav proof-board__nav--prev"
-        onClick={() => scrollByCard(-1)}
-        disabled={!canPrev}
-        aria-label="Previous case studies"
-      >
-        ←
-      </button>
-      <button
-        type="button"
-        className="proof-board__nav proof-board__nav--next"
-        onClick={() => scrollByCard(1)}
-        disabled={!canNext}
-        aria-label="Next case studies"
-      >
-        →
-      </button>
+      {!isGrid && (
+        <>
+          <button
+            type="button"
+            className="proof-board__nav proof-board__nav--prev"
+            onClick={() => scrollByCard(-1)}
+            disabled={!canPrev}
+            aria-label="Previous case studies"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            className="proof-board__nav proof-board__nav--next"
+            onClick={() => scrollByCard(1)}
+            disabled={!canNext}
+            aria-label="Next case studies"
+          >
+            →
+          </button>
+        </>
+      )}
     </figure>
   );
 }
