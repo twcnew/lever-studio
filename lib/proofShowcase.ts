@@ -8,6 +8,8 @@ export type ProofShowcaseItem = {
   brandColor: string;
   headline: string;
   quote: string;
+  /** Short “what’s inside” line for the /use-cases index grid. */
+  overview: string;
   author: string;
   role: string;
   initials: string;
@@ -23,6 +25,13 @@ const PROOF_METRICS: Record<CaseStudy["logoId"], { value: string; label: string 
   swan: { value: "~5", label: "people of triage automated" },
   flex: { value: "12+", label: "meetings / week" },
   happypal: { value: "10+", label: "qualified meetings / week" },
+};
+
+/** What’s inside each case — used on /use-cases index instead of the quote. */
+const PROOF_OVERVIEWS: Record<CaseStudy["logoId"], string> = {
+  swan: "Inbound routing + CRM & TAP hygiene + FI sizing + health lists + forecast briefs",
+  flex: "TAM & tiers + job-post engine + GitHub / HF signals + LinkedIn listening + lookalikes",
+  happypal: "CSE market map + domain → contact agents + email generation + referral loops",
 };
 
 function isTodo(value: string) {
@@ -71,6 +80,7 @@ export function buildProofShowcaseItems(): ProofShowcaseItem[] {
       brandColor: study.brandColor,
       headline: study.indexCard.headline,
       quote,
+      overview: PROOF_OVERVIEWS[study.logoId],
       author,
       role,
       initials,

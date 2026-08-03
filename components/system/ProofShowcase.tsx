@@ -7,11 +7,14 @@ import { ProofCard } from "./ProofCard";
 type ProofShowcaseProps = {
   excludeSlug?: string;
   layout?: "carousel" | "grid";
+  /** Quote on homepage; overview of what’s inside on /use-cases index. */
+  body?: "quote" | "overview";
 };
 
 export function ProofShowcase({
   excludeSlug,
   layout = "carousel",
+  body = "quote",
 }: ProofShowcaseProps) {
   const isGrid = layout === "grid";
   const items = useMemo(() => {
@@ -67,7 +70,7 @@ export function ProofShowcase({
       <div className="proof-board__viewport" ref={viewportRef}>
         <div className="proof-board__track">
           {items.map((item) => (
-            <ProofCard item={item} key={item.slug} />
+            <ProofCard item={item} body={body} key={item.slug} />
           ))}
         </div>
       </div>

@@ -62,7 +62,7 @@ export function UseCasesPage() {
             }
             sub={sub}
           >
-            <ProofShowcase layout="grid" />
+            <ProofShowcase layout="grid" body="overview" />
           </LpModule>
         </div>
 

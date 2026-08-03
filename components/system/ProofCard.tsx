@@ -6,16 +6,24 @@ import { ProofAttributionBand } from "./ProofAttributionBand";
 
 type ProofCardProps = {
   item: ProofShowcaseItem;
+  body?: "quote" | "overview";
 };
 
-export function ProofCard({ item }: ProofCardProps) {
+export function ProofCard({ item, body = "quote" }: ProofCardProps) {
   const { Logo } = CASE_STUDY_LOGOS[item.logoId];
+  const isOverview = body === "overview";
 
   return (
     <Link className="proof-board__cell" data-slug={item.slug} href={item.href}>
-      <blockquote className="proof-board__quote">
-        &ldquo;{item.quote}&rdquo;
-      </blockquote>
+      {isOverview ? (
+        <p className="proof-board__quote proof-board__quote--overview">
+          {item.overview}
+        </p>
+      ) : (
+        <blockquote className="proof-board__quote">
+          &ldquo;{item.quote}&rdquo;
+        </blockquote>
+      )}
 
       <div className="proof-board__rule" aria-hidden="true" />
 

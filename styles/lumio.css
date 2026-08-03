@@ -8289,6 +8289,11 @@ html.use-cases-index-page .use-cases-index .lp--clay {
   flex: 0 0 auto;
 }
 
+.proof-board__quote--overview {
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
 .proof-board__rule {
   margin: 0 calc(-1 * var(--proof-cell-pad-inline)) 18px;
   border-top: 1px solid var(--hairline);
