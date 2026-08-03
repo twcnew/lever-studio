@@ -66,8 +66,8 @@ export const REVENUE_ENGINE = {
     { label: "Website activity", logos: ["rb2b", "vector"] },
     { label: "CRM data", logos: ["hubspot", "salesforce"] },
     { label: "Market signals", logos: ["alpha-signal", "signalbase", "sumble"] },
-    { label: "Hiring & job change", logos: ["predictleads", "usergems", "theirstack"] },
-    { label: "LinkedIn engagement", logos: ["linkedin", "commonroom"] },
+    { label: "Hiring & job change", logos: ["usergems", "theirstack"] },
+    { label: "LinkedIn engagement", logos: ["commonroom"] },
     { label: "Tech-stack change", logos: ["builtwith"] },
   ] satisfies RevenueSignal[],
   steps: [
