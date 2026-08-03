@@ -1,4 +1,9 @@
 export const FOOTER_CONTENT = {
+  subscribe: {
+    label: "Subscribe for GTM system notes and playbook updates.",
+    placeholder: "you@company.com",
+    comingSoon: "Newsletter coming soon.",
+  },
   author: {
     label: "Built by",
   },
