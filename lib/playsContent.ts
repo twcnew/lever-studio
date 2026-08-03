@@ -36,7 +36,7 @@ export const PLAYS_CONTENT = {
       steps: [
         { label: "Play & signal pick", tools: ["clay", "linkedin"] },
         { label: "Company & contact sourcing", tools: ["apollo", "clay", "findymail", "icypeas", "wiza"] },
-        { label: "Lead scoring & tiering", tools: ["hubspot", "n8n", "bounceban"] },
+        { label: "Lead scoring & tiering", tools: ["hubspot", "n8n"] },
       ],
       outputs: [
         { n: 1, label: "Omnichannel", detail: "Email + LinkedIn + call", logos: ["instantly", "lemlist", "unipile"] },
