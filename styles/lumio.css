@@ -8091,9 +8091,13 @@ html.fp-on body {
   scroll-snap-align: unset;
 }
 
-/* Equal-height grid: grow the quote so attribution sits on a shared baseline */
+/* Equal-height grid: keep overview at the top, push footer to the bottom */
 .proof-board--grid .proof-board__quote {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
+}
+
+.proof-board--grid .proof-board__rule {
+  margin-top: auto;
 }
 
 .use-cases-index {
