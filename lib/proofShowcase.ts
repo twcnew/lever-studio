@@ -29,9 +29,9 @@ const PROOF_METRICS: Record<CaseStudy["logoId"], { value: string; label: string 
 
 /** What’s inside each case — used on /use-cases index instead of the quote. */
 const PROOF_OVERVIEWS: Record<CaseStudy["logoId"], string> = {
-  swan: "Inbound routing + CRM & TAP hygiene + FI sizing + health lists + forecast briefs",
-  flex: "TAM & tiers + job-post engine + GitHub / HF signals + LinkedIn listening + lookalikes",
-  happypal: "CSE market map + domain → contact agents + email generation + referral loops",
+  swan: "Inbound routing, CRM hygiene, and self-serve RevOps briefs",
+  flex: "Signal-led outbound across jobs, GitHub, and LinkedIn",
+  happypal: "CSE detection from domain to outreach, on autopilot",
 };
 
 function isTodo(value: string) {
