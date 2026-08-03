@@ -8105,6 +8105,7 @@ html.fp-on body {
 
 .proof-board--grid .proof-board__rule {
   margin-top: auto;
+  padding-top: 20px;
 }
 
 .use-cases-index {

@@ -47,7 +47,7 @@ export const flexCaseStudy: CaseStudy = {
   featuredQuote: {
     text: "We finally reach technical buyers with custom playbooks — we experiment fast and scale what converts, without generic templates.",
     author: "Stéphane Roy",
-    role: "Dir. GTM & RevOps",
+    role: "Director of GTM",
     avatarSrc: "/testimonials/stephane-roy-flex.png?v=11",
   },
   heroPopoverQuote:

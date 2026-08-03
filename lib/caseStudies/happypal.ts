@@ -46,7 +46,7 @@ export const happypalCaseStudy: CaseStudy = {
   featuredQuote: {
     text: "From kickoff to delivery, the collaboration was seamless and the work was impeccable. I'd recommend them without hesitation.",
     author: "Eddy Frodé",
-    role: "Growth Lead",
+    role: "Head of Growth",
     avatarSrc: "/testimonials/eddy-frode-happypal-proof.png?v=2",
   },
   heroPopoverQuote:
@@ -161,7 +161,7 @@ export const happypalCaseStudy: CaseStudy = {
     quote: {
       text: "From kickoff to delivery, the collaboration was seamless and the work was impeccable. I'd recommend them without hesitation.",
       author: "Eddy Frodé",
-      role: "Growth Lead",
+      role: "Head of Growth",
       avatarSrc: "/testimonials/eddy-frode-happypal.png?v=5",
     },
     metrics: [
