@@ -8101,11 +8101,23 @@ html.fp-on body {
   flex: 0 0 auto;
   margin-block: 0;
   align-self: stretch;
+  min-height: calc(2 * 1.55em);
 }
 
 .proof-board--grid .proof-board__rule {
   margin-top: auto;
   padding-top: 20px;
+}
+
+/* Reserve 2 lines for roles so 1-line / 2-line titles keep the same baselines */
+.proof-board--grid .proof-attribution__role {
+  white-space: normal;
+  line-height: 1.3;
+  min-height: calc(2 * 1.3em);
+}
+
+.proof-board--grid .proof-attribution {
+  min-height: clamp(112px, 13vw, 136px);
 }
 
 .use-cases-index {
