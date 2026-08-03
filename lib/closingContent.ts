@@ -1,11 +1,13 @@
 const CAL_ROYAL = "#5a8be4";
 const CAL_INK = "#0e0a07";
+/** Selected day — lighter blue so the pick reads clearly. */
+const CAL_SELECTED = "#b7d0f7";
 
 const CAL_UI_VARS = {
-  "cal-brand": CAL_ROYAL,
-  "cal-brand-emphasis": "#4a7bd4",
-  "cal-brand-text": "#ffffff",
-  "cal-brand-subtle": "#b8cff5",
+  "cal-brand": CAL_SELECTED,
+  "cal-brand-emphasis": CAL_ROYAL,
+  "cal-brand-text": CAL_INK,
+  "cal-brand-subtle": "#dce8f8",
   "cal-text": CAL_INK,
   "cal-text-emphasis": CAL_INK,
   "cal-text-subtle": CAL_INK,
@@ -31,10 +33,6 @@ export function getCalUiConfig() {
     layout,
     styles: {
       branding: { brandColor },
-      enabledDateButton: {
-        backgroundColor: brandColor,
-        color: "#ffffff",
-      },
     },
   } as const;
 }

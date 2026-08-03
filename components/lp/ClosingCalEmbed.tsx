@@ -24,6 +24,21 @@ export function ClosingCalEmbed() {
         action: "linkReady",
         callback: applyUi,
       });
+
+      // Re-assert theme after date picks so selected-day brand color sticks.
+      cal("on", {
+        action: "*",
+        callback: (e: { detail?: { type?: string } }) => {
+          const type = e?.detail?.type;
+          if (
+            type === "datePicked" ||
+            type === "slotSelected" ||
+            type === "bookerReady"
+          ) {
+            applyUi();
+          }
+        },
+      });
     })();
 
     return () => {
