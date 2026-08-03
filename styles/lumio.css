@@ -8088,12 +8088,19 @@ html.fp-on body {
   height: 100%;
   flex: none;
   align-self: stretch;
+  justify-content: flex-start;
   scroll-snap-align: unset;
+  /* Portrait was tuned for ~3-line quotes; overviews are ~2 lines. */
+  --proof-portrait-top: calc(
+    var(--proof-cell-pad-block) + 2 * 1.55 * clamp(15px, 1.35vw, 17px) + 16px
+  );
 }
 
-/* Equal-height grid: keep overview at the top, push footer to the bottom */
+/* First line of overview stays flush to the card top padding */
 .proof-board--grid .proof-board__quote {
   flex: 0 0 auto;
+  margin-block: 0;
+  align-self: stretch;
 }
 
 .proof-board--grid .proof-board__rule {
