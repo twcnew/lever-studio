@@ -8106,7 +8106,8 @@ html.fp-on body {
 
 .proof-board--grid .proof-board__rule {
   margin-top: auto;
-  padding-top: 20px;
+  padding-top: 28px;
+  margin-bottom: 8px;
 }
 
 /* Reserve 2 lines for roles so 1-line / 2-line titles keep the same baselines */
